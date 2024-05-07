@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.CityDetailsBookingController">
+   <children>
+      <Pane layoutX="-1.0" layoutY="2.0" prefHeight="650.0" prefWidth="542.0" style="-fx-background-color: #F3FFFB;">
+         <children>
+            <Label fx:id="titlaPkg" layoutX="26.0" layoutY="457.0" text="Maldives Iseland">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Text fx:id="detailPkg" layoutX="26.0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Its not only a iseland but also a Country . It is the best tourist spot of the world. If you want to feel its feeling then book now." wrappingWidth="426.7875671386719" />
+            <ImageView fx:id="detailsImgPkg" fitHeight="376.0" fitWidth="505.0" layoutX="13.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane layoutX="534.0" layoutY="1.0" prefHeight="650.0" prefWidth="318.0" style="-fx-background-color: lightgray;">
+         <children>
+            <Label layoutX="27.0" layoutY="144.0" prefHeight="38.0" prefWidth="76.0" text="Price :">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="PricePkg" layoutX="123.0" layoutY="148.0" text="6000 $">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="189.0" prefHeight="35.0" prefWidth="66.0" text="Days :">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="numDays" layoutX="118.0" layoutY="189.0" text="4">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="27.0" layoutY="302.0" text="Total Price: ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalPricePkg" layoutX="148.0" layoutY="302.0" text="12000">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="addCartBtn" layoutX="59.0" layoutY="401.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: #19DC61;" text="Add To Cart" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="bookPkg" layoutX="61.0" layoutY="485.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="175.0" style="-fx-background-color: FFB500;" text="Book Now" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="numberOfSeatPkg" layoutX="28.0" layoutY="242.0" prefHeight="25.0" prefWidth="76.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

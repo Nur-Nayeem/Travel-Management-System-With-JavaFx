@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="961.0" style="-fx-background-color: #075B95;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.buttonController">
+   <children>
+      <AnchorPane prefHeight="609.0" prefWidth="283.0" style="-fx-background-color: #393351;" AnchorPane.bottomAnchor="-0.7999999999999545" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="678.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox layoutY="199.0" prefHeight="424.0" prefWidth="280.0" stylesheets="@style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="180.0">
+               <children>
+                  <Button fx:id="btn11" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" stylesheets="@style.css" text="Home" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn1" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" text="Profile" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn12" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" text="Service" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn13" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" text="Payments" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn14" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" text="About Us" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <Pane layoutY="80.0" prefHeight="71.0" prefWidth="280.0" style="-fx-background-color: #F47BDA; -fx-background-radius: 6;">
+               <children>
+                  <Label alignment="CENTER" layoutX="59.0" layoutY="13.0" prefHeight="46.0" prefWidth="162.0" text="Dash Board" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="278.0" prefHeight="616.0" prefWidth="691.0">
+         <children>
+            <Pane layoutX="-41.0" layoutY="-187.0" prefHeight="260.0" prefWidth="422.0" rotate="45.0" style="-fx-background-color: #F47BDA; -fx-background-radius: 70;" />
+            <Button layoutX="41.0" layoutY="186.0" mnemonicParsing="false" onAction="#switchToPackage" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css" text="Packages" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/worldwide.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="264.0" layoutY="186.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css" text="Booking" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="55.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/booking.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button layoutX="485.0" layoutY="186.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css">
+               <graphic>
+                  <Circle radius="44.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.544950008392334" green="0.6299999952316284" blue="0.2897999882698059" opacity="0.8275076150894165" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+               </graphic></Button>
+            <Button layoutX="38.0" layoutY="356.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css">
+               <graphic>
+                  <Circle radius="44.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.4613528251647949" green="0.27040934562683105" blue="0.5368421077728271" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+               </graphic></Button>
+            <Button layoutX="272.0" layoutY="356.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css">
+               <graphic>
+                  <Circle radius="44.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.8299999833106995" green="0.5404683351516724" blue="0.0746999979019165" opacity="0.6329787373542786" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+               </graphic></Button>
+            <Button layoutX="485.0" layoutY="356.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css">
+               <graphic>
+                  <Circle radius="44.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.6899999976158142" green="0.1518000066280365" blue="0.3670800030231476" opacity="0.7515197396278381" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+               </graphic></Button>
+         </children></Pane>
+      <Pane layoutX="726.0" layoutY="498.0" prefHeight="260.0" prefWidth="422.0" style="-fx-background-color: #F47BDA; -fx-background-radius: 70;" />
+   </children>
+
+</AnchorPane>

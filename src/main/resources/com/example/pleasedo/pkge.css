@@ -1,0 +1,40 @@
+.button
+{
+    -fx-background-color:  #9754B1;
+    -fx-background-radius: 20 0 0 20;
+}
+.button:hover
+{
+    -fx-background-color:  #524A7B;
+     -fx-background-radius: 20 0 0 20;
+}
+
+.button:pressed
+{
+    -fx-background-color: #2F2B43;
+    -fx-background-radius: 20 0 0 20;
+}
+#backBtn{
+    -fx-background-color:  #5305D9;
+    -fx-background-radius: 20;
+}
+
+#backBtn: hover{
+    -fx-background-color:  #524A7B;
+}
+
+.dark-background{
+    -fx-background-color: #222222;
+}
+
+.gradient{
+    -fx-background-color: Linear-gradient(to top, #676767, transparent);
+}
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1), 10 , 0 , 0 , 10);
+}
+
+.transparent{
+    -fx-background-color: transparent;
+}
