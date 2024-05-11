@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -29,7 +30,6 @@ public class HelloController implements Initializable {
     @FXML
     private GridPane citiesGrid;
     private List<City> cities;
-
 
     public void switchToDashBoard(ActionEvent event) throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashBoard.fxml")));
@@ -60,6 +60,11 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resourceBundle) {
+
+
+
+
+
         cities = new ArrayList<>(getCities());
         int column = 0;
         int row = 1;
@@ -107,41 +112,31 @@ public class HelloController implements Initializable {
     private List<City> getCities() {
         List<City> ls = new ArrayList<>();
 
-        City city = new City();
-        city.setName("Shylate");
-        city.setImgSrc("/img/Shylate.png");
-        city.setNbDay(3);
-        city.setPrice(2000);
-        ls.add(city);
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin", "root", "");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM City");
+            while (resultSet.next()) {
+                // Assuming a table with two columns: id and name
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String imdr = resultSet.getString("image");
+                int d = resultSet.getInt("days");
+                int prc = resultSet.getInt("price");
 
-        city = new City();
-        city.setName("Cox-Bazar");
-        city.setImgSrc("/img/cox.png");
-        city.setNbDay(4);
-        city.setPrice(6000);
-        ls.add(city);
+                City city = new City();
+                city.setName(name);
+                city.setImgSrc(imdr);
+                city.setNbDay(d);
+                city.setPrice(prc);
+                ls.add(city);
 
-        city = new City();
-        city.setName("Bandarban");
-        city.setImgSrc("/img/bandarban.png");
-        city.setNbDay(5);
-        city.setPrice(2500);
-        ls.add(city);
+            }
 
-        city = new City();
-        city.setName("Rangamati");
-        city.setImgSrc("/img/rangamati.png");
-        city.setNbDay(5);
-        city.setPrice(2500);
-        ls.add(city);
-
-        city = new City();
-        city.setName("Saint Martin");
-        city.setImgSrc("/img/saintmartin.png");
-        city.setNbDay(5);
-        city.setPrice(2500);
-
-        ls.add(city);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
 
         return ls;

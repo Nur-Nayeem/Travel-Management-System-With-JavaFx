@@ -20,6 +20,7 @@
             </Label>
             <Text fx:id="detailPkg" layoutX="26.0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Its not only a iseland but also a Country . It is the best tourist spot of the world. If you want to feel its feeling then book now." wrappingWidth="426.7875671386719" />
             <ImageView fx:id="detailsImgPkg" fitHeight="376.0" fitWidth="505.0" layoutX="13.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="bk" layoutX="13.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToPackage" text="Back" />
          </children>
       </Pane>
       <Pane layoutX="534.0" layoutY="1.0" prefHeight="650.0" prefWidth="318.0" style="-fx-background-color: lightgray;">
@@ -29,7 +30,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="PricePkg" layoutX="123.0" layoutY="148.0" text="6000 $">
+            <Label fx:id="PricePkg" layoutX="123.0" layoutY="148.0" text=" ">
                <font>
                   <Font size="24.0" />
                </font>
@@ -39,7 +40,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="numDays" layoutX="118.0" layoutY="189.0" text="4">
+            <Label fx:id="numDays" layoutX="118.0" layoutY="189.0">
                <font>
                   <Font size="24.0" />
                </font>
@@ -49,7 +50,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="totalPricePkg" layoutX="148.0" layoutY="302.0" text="12000">
+            <Label fx:id="totalPricePkg" layoutX="148.0" layoutY="302.0">
                <font>
                   <Font size="20.0" />
                </font>

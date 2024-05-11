@@ -13,7 +13,7 @@
    <children>
       <ImageView fx:id="postImage" fitHeight="246.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../img/cox.png" />
+            <Image url="@../../../img/cox-bazar.png" />
          </image>
       </ImageView>
       <Label alignment="CENTER" layoutX="40.0" layoutY="236.0" text="Cox Bazar Sea Beach" textFill="#0650ff">

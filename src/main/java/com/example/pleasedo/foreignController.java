@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -108,44 +109,36 @@ public class foreignController implements Initializable {
     }
 
 
+
     private List<City> getCities() {
         List<City> ls = new ArrayList<>();
 
-        City city = new City();
-        city.setName("Maldives");
-        city.setImgSrc("/img/maldives.png");
-        city.setNbDay(3);
-        city.setPrice(2000);
-        ls.add(city);
 
-        city = new City();
-        city.setName("Dubai");
-        city.setImgSrc("/img/dubai.png");
-        city.setNbDay(4);
-        city.setPrice(6000);
-        ls.add(city);
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin", "root", "");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM foreignCity");
+            while (resultSet.next()) {
+                // Assuming a table with two columns: id and name
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String imdr = resultSet.getString("image");
+                int d = resultSet.getInt("days");
+                int prc = resultSet.getInt("price");
 
-        city = new City();
-        city.setName("Nepal");
-        city.setImgSrc("/img/nepal.png");
-        city.setNbDay(5);
-        city.setPrice(2500);
-        ls.add(city);
+                City city = new City();
+                city.setName(name);
+                city.setImgSrc(imdr);
+                city.setNbDay(d);
+                city.setPrice(prc);
+                ls.add(city);
 
-        city = new City();
-        city.setName("Singapur City");
-        city.setImgSrc("/img/singapurCity.png");
-        city.setNbDay(5);
-        city.setPrice(2500);
-        ls.add(city);
+            }
 
-        city = new City();
-        city.setName("Japan");
-        city.setImgSrc("/img/japan.png");
-        city.setNbDay(5);
-        city.setPrice(2500);
-
-        ls.add(city);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
 
         return ls;

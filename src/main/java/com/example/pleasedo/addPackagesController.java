@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -17,12 +18,19 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class addPackagesController implements Initializable {
+
+    @FXML
+    private ComboBox<String> PackageType;
 
     @FXML
     private Button addPackageBtn;
@@ -49,6 +57,8 @@ public class addPackagesController implements Initializable {
 
     private List<City> city;
 
+    private String selectAddCity;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -69,6 +79,15 @@ public class addPackagesController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        String[]  typePkg = {"Local","Foreign"};
+        PackageType.getItems().addAll(typePkg);
+
+        PackageType.setOnAction(event -> {
+            String data = PackageType.getSelectionModel().getSelectedItem().toString();
+            selectAddCity = data;
+            System.out.println(selectAddCity);
+        });
+
         imageLocationBtn.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Select Image");
@@ -83,10 +102,57 @@ public class addPackagesController implements Initializable {
 
         addPackageBtn.setOnAction(event -> {
 
+            // SQL query to insert data into table
+
             String nameTrip = tripTo.getText();
             int priceTripValue = Integer.parseInt(priceTrip.getText());
             int daysTrp = Integer.parseInt(daysTrip.getText());
             String trimmedPath = selectedImagePath;
+
+            String sql1 = "INSERT INTO City (name, days, price, image) VALUES (?, ?, ?, ?)";
+
+            String sql2 = "INSERT INTO foreignCity (name, days, price, image) VALUES (?, ?, ?, ?)";
+
+            String sql3="";
+
+
+
+
+            try {
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin", "root", "");
+                System.out.println("Connection");
+                PreparedStatement statement = null;
+                if(Objects.equals(selectAddCity,"Local")){
+                    statement = connection.prepareStatement(sql1);
+                    sql3 = "INSERT INTO allCity (name, days, price, image) SELECT name, days, price, image from City";
+                } else if (Objects.equals(selectAddCity,"Foreign")) {
+                    statement = connection.prepareStatement(sql2);
+                    sql3 = "INSERT INTO allCity (name, days, price, image) SELECT name, days, price, image from foreignCity";
+                }
+                else {
+                    System.out.println("Error insertion");
+                }
+
+
+                // Set values for parameters
+                //assert statement != null;
+                statement.setString(1, nameTrip);
+                statement.setInt(2, daysTrp);
+                statement.setInt(3, priceTripValue);
+                statement.setString(4, trimmedPath);
+
+
+
+                    // Execute the SQL statement
+                    int rowsInserted = statement.executeUpdate();
+                    if (rowsInserted > 0) {
+                        statement.executeUpdate(sql3);
+                        System.out.println("A new row has been inserted successfully.");
+
+            }
+            }catch (SQLException ex) {
+                ex.printStackTrace();
+            }
             System.out.println("Trip Name: " + nameTrip + "\nPrice: " + priceTripValue + "\nImage Location: " + trimmedPath + "\nDay's: " + daysTrp);
             System.out.println(getClass().getResource("City.fxml"));
             insertExternalFxml(nameTrip,priceTripValue,daysTrp,trimmedPath);
