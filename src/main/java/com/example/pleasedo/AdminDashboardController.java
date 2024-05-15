@@ -1,11 +1,14 @@
 package com.example.pleasedo;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,6 +22,9 @@ public class AdminDashboardController implements Initializable {
     private Scene scene;
     private Parent root;
 
+    @FXML
+    private Button viewAllPackages;
+
     public void switchToAddPackages(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("addPackages.fxml")));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -29,6 +35,27 @@ public class AdminDashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        viewAllPackages.setOnAction(event -> {
+            try {
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("viewPkgFromAdmin.fxml")));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        });
     }
+
+    public void LogOut(MouseEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginUser.fxml")));
+
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

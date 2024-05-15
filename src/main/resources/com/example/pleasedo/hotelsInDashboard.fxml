@@ -15,13 +15,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1526.0" style="-fx-background-color: #dfe6e9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.buttonController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1526.0" style="-fx-background-color: #dfe6e9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.HotelsInDashboardController">
    <children>
       <AnchorPane prefHeight="781.0" prefWidth="346.0" style="-fx-background-color: #68707a;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1174.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox layoutX="1.0" layoutY="195.2" prefHeight="477.0" prefWidth="342.0" stylesheets="@style.css" AnchorPane.bottomAnchor="109.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="195.0">
                <children>
-                  <Button fx:id="pkgBtn" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="84.0" prefWidth="342.0" stylesheets="@style.css" text="Packages" textFill="WHITE">
+                  <Button mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="84.0" prefWidth="342.0" styleClass="button2" stylesheets="@style.css" text="Packages" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -32,12 +32,8 @@
                            </image>
                         </ImageView>
                      </graphic>
-                     <styleClass>
-                        <String fx:value="button2" />
-                        <String fx:value="pkgBtn" />
-                     </styleClass>
                   </Button>
-                  <Button fx:id="hotelBtn" mnemonicParsing="false" onAction="#switchToHotelDashboard" prefHeight="79.0" prefWidth="342.0" styleClass="button2" stylesheets="@style.css" text="   Hotels" textFill="WHITE">
+                  <Button fx:id="hotelBtn" mnemonicParsing="false" onAction="#switchToHotelDashboard" prefHeight="79.0" prefWidth="342.0" stylesheets="@style.css" text="   Hotels" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -48,6 +44,10 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <styleClass>
+                        <String fx:value="button2" />
+                        <String fx:value="pkgBtn" />
+                     </styleClass>
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="81.0" prefWidth="342.0" styleClass="button2" stylesheets="@style.css" text="Booking" textFill="WHITE">
                      <graphic>
@@ -92,10 +92,10 @@
          <children>
             <ScrollPane prefHeight="228.0" prefWidth="1168.0">
                <content>
-                  <GridPane fx:id="gridPkghome" prefHeight="173.0" prefWidth="214.0">
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <GridPane fx:id="gridHtlhomeBd" prefHeight="173.0" prefWidth="214.0">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
                   </GridPane>
                </content>
             </ScrollPane>
@@ -105,7 +105,7 @@
          <children>
             <ScrollPane prefHeight="238.0" prefWidth="1168.0">
                <content>
-                  <GridPane fx:id="gridPkghomeFrn" prefHeight="166.0" prefWidth="234.0">
+                  <GridPane fx:id="gridHtklhomeFrn" prefHeight="166.0" prefWidth="234.0">
                      <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
@@ -114,26 +114,25 @@
             </ScrollPane>
          </children>
       </HBox>
-      <Text fill="#68707a" layoutX="365.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BD Packages">
+      <Text fill="#68707a" layoutX="365.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BD Hotels">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#68707a" layoutX="365.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Foreign Packages">
+      <Text fill="#68707a" layoutX="365.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Foreign Hotels">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="SeeMoreBd" layoutX="1404.0" layoutY="431.0" mnemonicParsing="false" onAction="#switchToPackage" style="-fx-background-color: transparent;" text="See more.." textFill="#68707a">
+      <Button fx:id="SeeMoreBd" layoutX="1404.0" layoutY="431.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="See more.." textFill="#68707a">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="SeeMoreFrn" layoutX="1403.0" layoutY="742.0" mnemonicParsing="false" onAction="#switchToFrnPkg" style="-fx-background-color: transparent;" text="See more.." textFill="#68707a">
+      <Button fx:id="SeeMoreFrn" layoutX="1403.0" layoutY="742.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="See more.." textFill="#68707a">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
    </children>
-
 </AnchorPane>

@@ -8,6 +8,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -20,9 +21,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class HelloController implements Initializable {
-
-
+public class ViewPkgFromAdminController implements Initializable {
 
     private Stage stage;
     private Scene scene;
@@ -31,9 +30,19 @@ public class HelloController implements Initializable {
     private GridPane citiesGrid;
     private List<City> cities;
 
-    public void switchToDashBoard(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashBoard.fxml")));
+    public void switchToAddPackages(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("addPackages.fxml")));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void LogOut(MouseEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginUser.fxml")));
+
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -58,9 +67,12 @@ public class HelloController implements Initializable {
         stage.show();
     }
 
+
+
+
+
     @Override
     public void initialize(URL location, ResourceBundle resourceBundle) {
-
         cities = new ArrayList<>(getCities());
         int column = 0;
         int row = 1;
@@ -105,14 +117,16 @@ public class HelloController implements Initializable {
     }
 
 
+
     private List<City> getCities() {
         List<City> ls = new ArrayList<>();
+
 
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin", "root", "");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM City");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM allCity");
             while (resultSet.next()) {
                 // Assuming a table with two columns: id and name
                 int id = resultSet.getInt("id");
@@ -138,7 +152,4 @@ public class HelloController implements Initializable {
         return ls;
 
     }
-
-
-
 }

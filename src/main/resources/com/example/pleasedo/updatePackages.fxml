@@ -11,26 +11,25 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.addPackagesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="975.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.UpdatePackagesController">
    <left>
       <AnchorPane prefHeight="600.0" prefWidth="233.0" style="-fx-background-color: #0C625F;" BorderPane.alignment="CENTER">
          <children>
             <VBox layoutX="-3.0" layoutY="178.0" prefHeight="422.0" prefWidth="238.0">
                <children>
-                  <Button fx:id="addPkgManue" mnemonicParsing="false" prefHeight="70.0" prefWidth="217.0" style="-fx-background-color: #6FC5B9;" styleClass="buttonAddPkg" stylesheets="@style.css" text="Add Packages" textFill="WHITE">
+                  <Button fx:id="addPkgManue" mnemonicParsing="false" prefHeight="70.0" prefWidth="223.0" styleClass="buttonAddPkg" stylesheets="@style.css" text="Add Packages" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="updatePkgBtn" mnemonicParsing="false" prefHeight="70.0" prefWidth="219.0" styleClass="buttonAddPkg" stylesheets="@style.css" text="Update Packages" textFill="WHITE">
+                  <Button fx:id="updatePkgBtn" mnemonicParsing="false" prefHeight="70.0" prefWidth="223.0" style="-fx-background-color: #6FC5B9;" styleClass="buttonAddPkg" stylesheets="@style.css" text="Update Packages" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="deletePkgBtn" mnemonicParsing="false" prefHeight="70.0" prefWidth="217.0" styleClass="buttonAddPkg" stylesheets="@style.css" text="Delete Packages" textFill="WHITE">
+                  <Button fx:id="deletePkgBtn" mnemonicParsing="false" prefHeight="70.0" prefWidth="223.0" styleClass="buttonAddPkg" stylesheets="@style.css" text="Delete Packages" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -57,50 +56,54 @@
                   <Pane layoutX="677.0" layoutY="550.0" opacity="0.47" prefHeight="154.0" prefWidth="124.0" rotate="-158.6" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
                   <Pane layoutX="383.0" layoutY="278.0" opacity="0.47" prefHeight="113.0" prefWidth="124.0" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
                   <Pane layoutX="132.0" layoutY="536.0" opacity="0.47" prefHeight="154.0" prefWidth="124.0" rotate="125.9" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
-                  <Label layoutX="95.0" layoutY="183.0" text="Trip To :" textFill="WHITE">
+                  <Label layoutX="452.0" layoutY="187.0" text="Package" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tripTo" layoutX="204.0" layoutY="186.0" prefHeight="25.0" prefWidth="180.0" promptText="Name Of the Location" />
                   <Label layoutX="185.0" layoutY="39.0" style="-fx-background-color: #E4A685; -fx-border-radius: 10;" text="Travel and Tour Management System" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="95.0" layoutY="244.0" text="Price : " textFill="WHITE">
+                  <Label layoutX="451.0" layoutY="365.0" text="Price " textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="priceTrip" layoutX="204.0" layoutY="247.0" prefHeight="25.0" prefWidth="180.0" promptText="Price" />
-                  <Label layoutX="94.0" layoutY="295.0" text="Day's :" textFill="WHITE">
+                  <TextField fx:id="priceTrip" layoutX="534.0" layoutY="368.0" prefHeight="25.0" prefWidth="108.0" promptText="Price" />
+                  <Label layoutX="452.0" layoutY="248.0" text="Day's " textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="daysTrip" layoutX="204.0" layoutY="298.0" prefHeight="25.0" prefWidth="179.0" promptText="Days" />
-                  <Label layoutX="92.0" layoutY="359.0" text="Image: " textFill="WHITE">
+                  <TextField fx:id="daysTrip" layoutX="537.0" layoutY="253.0" prefHeight="25.0" prefWidth="184.0" promptText="Days" />
+                  <Label layoutX="452.0" layoutY="314.0" text="Image" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="imageLocationBtn" layoutX="204.0" layoutY="361.0" mnemonicParsing="false" text="...." />
-                  <TextField fx:id="imgLocation" layoutX="235.0" layoutY="361.0" prefHeight="25.0" prefWidth="149.0" promptText="Image of location" />
-                  <ComboBox fx:id="PackageType" layoutX="202.0" layoutY="124.0" opacity="0.7" prefHeight="27.0" prefWidth="182.0" promptText="Select A Type" style="-fx-border-width: 0 0 2 0;" />
-                  <Button fx:id="addPackageBtn" layoutX="91.0" layoutY="460.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="180.0" style="-fx-background-color: #00D885;" text="Add Package" textFill="WHITE" />
-                  <VBox fx:id="contentArea" layoutX="413.0" layoutY="152.0" prefHeight="252.0" prefWidth="325.0" style="-fx-background-color: transparent;" />
-                  <Line endX="-91.0001220703125" endY="281.5882568359375" layoutX="475.0" layoutY="103.0" startX="-91.00006103515625" startY="20.99999237060547" stroke="#918686" />
-                  <Label layoutX="95.0" layoutY="123.0" text="Type:" textFill="WHITE">
+                  <Button fx:id="imageLocationBtn" layoutX="534.0" layoutY="316.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="31.0" text="...." />
+                  <TextField fx:id="imgLocation" layoutX="574.0" layoutY="316.0" prefHeight="25.0" prefWidth="149.0" promptText="Image of location" />
+                  <ComboBox fx:id="PackageType" layoutX="537.0" layoutY="140.0" opacity="0.7" prefHeight="27.0" prefWidth="141.0" promptText="Select A Type" style="-fx-border-width: 0 0 2 0;" />
+                  <Button fx:id="updateBtn" layoutX="435.0" layoutY="440.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="180.0" style="-fx-background-color: #00D885;" text="Update" textFill="WHITE" />
+                  <VBox fx:id="contentArea" layoutX="37.0" layoutY="146.0" prefHeight="338.0" prefWidth="366.0" style="-fx-background-color: transparent;" />
+                  <Label layoutX="452.0" layoutY="139.0" text="Type" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="ClearBtn" layoutX="289.0" layoutY="460.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="92.0" style="-fx-background-color: #FF433A;" text="Clear" textFill="WHITE">
+                  <Button fx:id="ClearBtn" layoutX="630.0" layoutY="440.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="92.0" style="-fx-background-color: #FF433A;" text="Clear" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
+                  <ComboBox fx:id="selectLocation" layoutX="537.0" layoutY="189.0" prefHeight="25.0" prefWidth="184.0" promptText="Select To Update" />
+                  <Label layoutX="294.0" layoutY="97.0" prefHeight="41.0" prefWidth="178.0" text="Update Packages" textFill="#fff307">
+                     <font>
+                        <Font name="Calibri Bold" size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </children>

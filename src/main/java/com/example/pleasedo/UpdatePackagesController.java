@@ -18,22 +18,28 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class addPackagesController implements Initializable {
+public class UpdatePackagesController implements Initializable {
 
     @FXML
     private ComboBox<String> PackageType;
 
     @FXML
-    private Button addPackageBtn;
+    private ComboBox<String> selectLocation;
+
+    @FXML
+    private Button addPkgManue;
+
+    @FXML
+    private Button deletePkgBtn;
+
+    @FXML
+    private Button updatePkgBtn;
 
     @FXML
     private TextField daysTrip;
@@ -47,8 +53,6 @@ public class addPackagesController implements Initializable {
     @FXML
     private TextField priceTrip; // Improved variable name
 
-    @FXML
-    private TextField tripTo;
 
     @FXML
     private VBox contentArea;
@@ -56,14 +60,13 @@ public class addPackagesController implements Initializable {
     @FXML
     private Button ClearBtn;
 
-    @FXML
-    private Button addPkgManue;
+
 
     @FXML
-    private Button deletePkgBtn;
+    private Button updateBtn;
 
-    @FXML
-    private Button updatePkgBtn;
+
+    private String SelectTripName;
 
     private String selectedImagePath;
 
@@ -74,6 +77,10 @@ public class addPackagesController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    private String URL = "jdbc:mysql://localhost:3306/admin";
+    private String USER = "root";
+    private String pppp = "";
 
     @FXML
     void switchToAdmin(MouseEvent event) throws IOException {
@@ -97,8 +104,33 @@ public class addPackagesController implements Initializable {
         PackageType.setOnAction(event -> {
             String data = PackageType.getSelectionModel().getSelectedItem().toString();
             selectAddCity = data;
+            String type = "";
+            if(selectAddCity.equals("Local")){
+                type = "city";
+            } else if (selectAddCity.equals("Foreign")) {
+                type = "foreignCity";
+            }
+            else {
+                System.out.println("error select");
+            }
             System.out.println(selectAddCity);
+            try {
+                Connection connection = DriverManager.getConnection(URL, USER, pppp);
+                System.out.println("Connection");
+                PreparedStatement statement = null;
+                statement = connection.prepareStatement("SELECT name FROM "+type);
+                ResultSet resultSet = statement.executeQuery();
+                while (resultSet.next()) {
+                    selectLocation.getItems().add(resultSet.getString("name"));
+                }
+
+            }catch (SQLException e){
+                System.out.println("error");
+            }
         });
+
+
+
 
         imageLocationBtn.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();
@@ -111,70 +143,55 @@ public class addPackagesController implements Initializable {
                 selectedImagePath = relativePath;
             }
         });
-        updatePkgBtn.setOnAction(event -> {
-            try {
-                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("updatePackages.fxml")));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
 
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        });
-
-        addPackageBtn.setOnAction(event -> {
+        updateBtn.setOnAction(event -> {
 
             // SQL query to insert data into table
 
-            String nameTrip = tripTo.getText();
+            String nameTrip = String.valueOf(selectLocation.getValue());
             int priceTripValue = Integer.parseInt(priceTrip.getText());
             int daysTrp = Integer.parseInt(daysTrip.getText());
             String trimmedPath = selectedImagePath;
 
-            String sql1 = "INSERT INTO City (name, days, price, image) VALUES (?, ?, ?, ?)";
+            String sql1 = "UPDATE city SET days = "+daysTrp+", price = "+priceTripValue+", image = "+trimmedPath+" where name = "+nameTrip;
 
-            String sql2 = "INSERT INTO foreignCity (name, days, price, image) VALUES (?, ?, ?, ?)";
+            String sql2 = "UPDATE foreignCity SET days = "+daysTrp+", price = "+priceTripValue+", image = "+trimmedPath+" where name = "+nameTrip;
 
-            String sql3="";
+            String sql3="UPDATE allCity SET days = "+daysTrp+", price = "+priceTripValue+" , image = "+trimmedPath+" where name = "+nameTrip;
 
 
 
 
             try {
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin", "root", "");
+                Connection connection = DriverManager.getConnection(URL, USER, pppp);
                 System.out.println("Connection");
-                PreparedStatement statement = null;
-                if(Objects.equals(selectAddCity,"Local")){
-                    statement = connection.prepareStatement(sql1);
-                    sql3 = "INSERT INTO allCity (name, days, price, image) SELECT name, days, price, image from City";
-                } else if (Objects.equals(selectAddCity,"Foreign")) {
-                    statement = connection.prepareStatement(sql2);
-                    sql3 = "INSERT INTO allCity (name, days, price, image) SELECT name, days, price, image from foreignCity";
-                }
-                else {
+                String sql;
+                if (Objects.equals(selectAddCity, "Local")) {
+                    sql = "UPDATE  city  SET days = ?, price = ?, image = ? WHERE name = ?";
+                } else if (Objects.equals(selectAddCity, "Foreign")) {
+                    sql = "UPDATE foreignCity SET days = ?, price = ?, image = ? WHERE name = ?";
+                } else {
                     System.out.println("Error insertion");
+                    return;
                 }
 
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setInt(1, daysTrp);
+                statement.setInt(2, priceTripValue);
+                statement.setString(3, trimmedPath);
+                statement.setString(4, nameTrip);
 
-                // Set values for parameters
-
-                statement.setString(1, nameTrip);
-                statement.setInt(2, daysTrp);
-                statement.setInt(3, priceTripValue);
-                statement.setString(4, trimmedPath);
-
-
-
-                    // Execute the SQL statement
-                    int rowsInserted = statement.executeUpdate();
-                    if (rowsInserted > 0) {
-                        statement.executeUpdate(sql3);
-                        System.out.println("A new row has been inserted successfully.");
-
-            }
+                int rowsInserted = statement.executeUpdate();
+                if (rowsInserted > 0) {
+                    sql = "UPDATE allCity SET days = ?, price = ?, image = ? WHERE name = ?";
+                    statement = connection.prepareStatement(sql);
+                    statement.setInt(1, daysTrp);
+                    statement.setInt(2, priceTripValue);
+                    statement.setString(3, trimmedPath);
+                    statement.setString(4, nameTrip);
+                    statement.executeUpdate();
+                    System.out.println("Update Successful.");
+                }
             }catch (SQLException ex) {
                 ex.printStackTrace();
             }
@@ -225,33 +242,33 @@ public class addPackagesController implements Initializable {
         return ls;
     }
 
-        private void insertExternalFxml(String nameTrip,int priceTripValue,int daysTrp,String trimmedPath) {
-            city = new ArrayList<>(getCities(nameTrip,priceTripValue,daysTrp,trimmedPath));
+    private void insertExternalFxml(String nameTrip,int priceTripValue,int daysTrp,String trimmedPath) {
+        city = new ArrayList<>(getCities(nameTrip,priceTripValue,daysTrp,trimmedPath));
 
 
 
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("City.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("City.fxml"));
 
-                Pane pane = null;
+        Pane pane = null;
 
-                try {
-                    pane = fxmlLoader.load();
-                } catch (IOException e) {
+        try {
+            pane = fxmlLoader.load();
+        } catch (IOException e) {
 
-                    throw new RuntimeException(e);
-                }
+            throw new RuntimeException(e);
+        }
 
-                CityController cityController = fxmlLoader.getController();
-                if(cityController != null){
-                    System.out.println("Ok ");
-                    try{
-                        cityController.setData(city.getLast());
-                    }
-                    catch (Exception e){
-                        System.out.println("Error");
-                    }
-                    contentArea.getChildren().add(pane);
-                }
+        CityController cityController = fxmlLoader.getController();
+        if(cityController != null){
+            System.out.println("Ok ");
+            try{
+                cityController.setData(city.getLast());
+            }
+            catch (Exception e){
+                System.out.println("Error");
+            }
+            contentArea.getChildren().add(pane);
+        }
     }
 }

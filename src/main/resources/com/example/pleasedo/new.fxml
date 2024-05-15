@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="BaseLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane layoutX="-5.0" layoutY="-2.0" prefHeight="105.0" prefWidth="1287.0" style="-fx-background-color: F1F2F7;">
+            <children>
+                <Label alignment="CENTER" layoutX="608.0" layoutY="51.0" prefHeight="35.0" prefWidth="135.0" text="Book Shop" textAlignment="CENTER" textFill="#c8cbd9">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <ImageView fx:id="exitB" fitHeight="41.0" fitWidth="24.0" layoutX="1221.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Resources/Close%20Window.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="73.0" fitWidth="92.0" layoutX="535.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Resources/Reading.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="217.0" layoutY="141.0" prefHeight="207.0" prefWidth="1070.0">
+            <children>
+                <VBox layoutX="17.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="English History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="122.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="436.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="331.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="226.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="539.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="643.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="748.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="850.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="952.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <Button layoutX="140.0" layoutY="167.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="240.0" layoutY="166.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="36.0" layoutY="166.0" minWidth="40.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="40.0" style="-fx-background-color: #707FDD;" text="But" />
+                <Button layoutX="349.0" layoutY="164.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="452.0" layoutY="162.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="557.0" layoutY="162.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="659.0" layoutY="164.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="767.0" layoutY="162.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="868.0" layoutY="167.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="968.0" layoutY="165.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+            </children>
+        </AnchorPane>
+        <Text fill="#68707a" layoutX="1168.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="See more..." textAlignment="CENTER" wrappingWidth="91.99588775634766" />
+        <Label layoutX="238.0" layoutY="117.0" text="History Books:">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+        <Line endX="928.0" layoutX="351.0" layoutY="378.0" startX="-134.66668701171875" stroke="#c8cbd9" />
+        <Label layoutX="251.0" layoutY="386.0" prefHeight="27.0" prefWidth="102.0" text="Story Books">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+        <AnchorPane layoutX="220.0" layoutY="405.0" prefHeight="232.0" prefWidth="1070.0">
+            <children>
+                <VBox layoutX="17.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="122.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="436.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="331.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="226.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="539.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="643.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="748.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="850.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <VBox layoutX="952.0" layoutY="28.0" prefHeight="22.0" prefWidth="89.0" style="-fx-background-color: E4E7F5; -fx-background-radius: 24; -fx-effect: shaow;">
+                    <children>
+                        <ImageView fitHeight="103.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resources/Book.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangla History" textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Text>
+                        <VBox prefHeight="22.0" prefWidth="89.0">
+                            <children>
+                                <Text fill="#68707a" strokeType="OUTSIDE" strokeWidth="0.0" text="110Tk." textAlignment="CENTER" wrappingWidth="89.24783325195312">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                    </children>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+                <Button layoutX="969.0" layoutY="165.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="863.0" layoutY="162.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="766.0" layoutY="163.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="657.0" layoutY="165.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="562.0" layoutY="165.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="452.0" layoutY="165.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="346.0" layoutY="164.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="244.0" layoutY="165.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="138.0" layoutY="168.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+                <Button layoutX="39.0" layoutY="169.0" mnemonicParsing="false" style="-fx-background-color: #707FDD;" text="Buy" textAlignment="CENTER" textFill="#1f384c">
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.43921568989753723" green="0.49803921580314636" blue="0.8666666746139526" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="-10.0" layoutY="99.0" prefHeight="699.0" prefWidth="226.0" style="-fx-background-color: F1F2F7;">
+            <children>
+                <ImageView fitHeight="79.0" fitWidth="69.0" layoutX="27.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Resources/Male%20User.png" />
+                    </image>
+                </ImageView>
+                <Text fill="#68707a" layoutX="93.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@User" wrappingWidth="76.50000000000006">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <Text fill="#68707a" layoutX="77.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buy Books" wrappingWidth="101.5">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <ImageView fitHeight="36.0" fitWidth="57.0" layoutX="35.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Resources/Literature.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="36.0" fitWidth="57.0" layoutX="35.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Resources/Literature.png" />
+                    </image>
+                </ImageView>
+                <Text fill="#68707a" layoutX="79.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MY Books" wrappingWidth="101.5">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <ImageView fitHeight="36.0" fitWidth="38.0" layoutX="35.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Resources/Shopping%20Cart.png" />
+                    </image>
+                </ImageView>
+                <Text fill="#68707a" layoutX="75.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart" wrappingWidth="86.83331680297852">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <ImageView fitHeight="36.0" fitWidth="57.0" layoutX="35.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Resources/Refresh.png" />
+                    </image>
+                </ImageView>
+                <Text fill="#68707a" layoutX="79.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout" wrappingWidth="101.5">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

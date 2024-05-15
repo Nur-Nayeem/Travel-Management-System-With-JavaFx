@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class buttonController implements Initializable {
+public class HotelsInDashboardController implements Initializable {
 
     private Stage stage;
     private Scene scene;
@@ -41,14 +41,14 @@ public class buttonController implements Initializable {
     @FXML
     private Button SeeMoreFrn;
 
+    @FXML
+    private GridPane gridHtklhomeFrn;
 
     @FXML
-    private GridPane gridPkghome;
-    @FXML
-    private GridPane gridPkghomeFrn;
+    private GridPane gridHtlhomeBd;
 
-    private List<City> cities;
-    private List<City> citiesFrn;
+    private List<Hotel> bdHotel;
+    private List<Hotel> FrnHotel;
 
 
 
@@ -70,7 +70,6 @@ public class buttonController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
     public void switchToHotelDashboard(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hotelsInDashboard.fxml")));
 
@@ -80,7 +79,6 @@ public class buttonController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
     public void switchToFrnPkg(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("foreignController.fxml")));
 
@@ -103,15 +101,15 @@ public class buttonController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        cities = new ArrayList<>(getCities());
-        citiesFrn = new ArrayList<>(getCitiesFrn());
+        bdHotel = new ArrayList<>(getHotels());
+        FrnHotel = new ArrayList<>(getHotelsFrn());
         int column = 0;
         int row = 1;
         int columnFrn = 0;
         int rowFrn = 1;
-        for (City city : cities) {
+        for (Hotel hotel : bdHotel) {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("City.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("hotel.fxml"));
 
             Pane pane = null;
 
@@ -122,11 +120,11 @@ public class buttonController implements Initializable {
                 throw new RuntimeException(e);
             }
 
-            CityController cityController = fxmlLoader.getController();
-            if(cityController != null){
+            hotelController hotelController = fxmlLoader.getController();
+            if(hotelController != null){
                 System.out.println("Ok ");
                 try{
-                    cityController.setData(city);
+                    hotelController.setData(hotel);
                 }
                 catch (Exception e){
                     System.out.println("Error");
@@ -135,7 +133,7 @@ public class buttonController implements Initializable {
                 if(column == 4){
                     break;
                 }
-                gridPkghome.add(pane,column++,row);
+                gridHtlhomeBd.add(pane,column++,row);
                 GridPane.setMargin(pane, new Insets(20));
 
 
@@ -145,9 +143,9 @@ public class buttonController implements Initializable {
 
         }
 
-        for (City city : citiesFrn) {
+        for (Hotel hotel : FrnHotel) {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("City.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("hotel.fxml"));
 
             Pane pane = null;
 
@@ -158,11 +156,11 @@ public class buttonController implements Initializable {
                 throw new RuntimeException(e);
             }
 
-            CityController cityController = fxmlLoader.getController();
-            if(cityController != null){
+            hotelController hotelController = fxmlLoader.getController();
+            if(hotelController != null){
                 System.out.println("Ok ");
                 try{
-                    cityController.setData(city);
+                    hotelController.setData(hotel);
                 }
                 catch (Exception e){
                     System.out.println("Error");
@@ -171,7 +169,7 @@ public class buttonController implements Initializable {
                 if(columnFrn == 4){
                     break;
                 }
-                gridPkghomeFrn.add(pane,columnFrn++,rowFrn);
+                gridHtklhomeFrn.add(pane,columnFrn++,rowFrn);
                 GridPane.setMargin(pane, new Insets(20));
 
 
@@ -186,28 +184,26 @@ public class buttonController implements Initializable {
 
     }
 
-    private List<City> getCities() {
-        List<City> ls = new ArrayList<>();
+    private List<Hotel> getHotels() {
+        List<Hotel> ls = new ArrayList<>();
 
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin", "root", "");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM City");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM bdhotel");
             while (resultSet.next()) {
                 // Assuming a table with two columns: id and name
-                int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String imdr = resultSet.getString("image");
-                int d = resultSet.getInt("days");
-                int prc = resultSet.getInt("price");
+                String location = resultSet.getString("location");
 
-                City city = new City();
-                city.setName(name);
-                city.setImgSrc(imdr);
-                city.setNbDay(d);
-                city.setPrice(prc);
-                ls.add(city);
+                Hotel hotel = new Hotel();
+                hotel.setHotelName(name);
+                hotel.setImgSrc(imdr);
+                hotel.setLocationName(location);
+
+                ls.add(hotel);
 
             }
 
@@ -220,28 +216,26 @@ public class buttonController implements Initializable {
 
     }
 
-    private List<City> getCitiesFrn() {
-        List<City> ls = new ArrayList<>();
+    private List<Hotel> getHotelsFrn() {
+        List<Hotel> ls = new ArrayList<>();
 
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin", "root", "");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM foreignCity");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM foreignhotel");
             while (resultSet.next()) {
                 // Assuming a table with two columns: id and name
-                int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String imdr = resultSet.getString("image");
-                int d = resultSet.getInt("days");
-                int prc = resultSet.getInt("price");
+                String location = resultSet.getString("location");
 
-                City city = new City();
-                city.setName(name);
-                city.setImgSrc(imdr);
-                city.setNbDay(d);
-                city.setPrice(prc);
-                ls.add(city);
+                Hotel hotel = new Hotel();
+                hotel.setHotelName(name);
+                hotel.setImgSrc(imdr);
+                hotel.setLocationName(location);
+
+                ls.add(hotel);
 
             }
 
@@ -253,6 +247,8 @@ public class buttonController implements Initializable {
         return ls;
 
     }
+
+
 
 
 
@@ -266,3 +262,4 @@ public class buttonController implements Initializable {
 //    }
 
 }
+

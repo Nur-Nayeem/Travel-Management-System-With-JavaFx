@@ -12,7 +12,7 @@
 }
 
 .button2{
-    -fx-background-color: #393351;
+    -fx-background-color: #68707a;
      -fx-background-radius: 20;
 }
 .button2:hover{
@@ -22,6 +22,10 @@
 .button2:pressed{
     -fx-background-color: #2F2B43;
     -fx-background-radius: 20;
+}
+
+.pkgBtn{
+     -fx-background-color: #57606f;
 }
 
 .buttonAddPkg{

@@ -33,12 +33,12 @@
             <Pane prefHeight="250.0" prefWidth="144.0" HBox.hgrow="ALWAYS" />
             <VBox alignment="BOTTOM_LEFT" prefHeight="250.0" prefWidth="101.0">
                <children>
-                  <Label fx:id="days" alignment="CENTER" prefHeight="34.0" prefWidth="134.0" text="4 days" textFill="WHITE">
+                  <Label fx:id="days" alignment="CENTER" prefHeight="34.0" prefWidth="65.0" text="4 " textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="price" alignment="CENTER" prefHeight="35.0" prefWidth="134.0" text="3000 $" textFill="WHITE">
+                  <Label fx:id="price" alignment="CENTER" prefHeight="35.0" prefWidth="134.0" text="3000 " textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -50,5 +50,15 @@
             </VBox>
          </children>
       </HBox>
+      <Label layoutX="278.0" layoutY="170.0" text="Days" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="302.0" layoutY="204.0" text="\$" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

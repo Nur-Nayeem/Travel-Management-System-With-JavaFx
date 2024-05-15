@@ -6,7 +6,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -17,35 +16,30 @@
    <children>
       <AnchorPane prefHeight="609.0" prefWidth="283.0" style="-fx-background-color: #393351;" AnchorPane.bottomAnchor="-0.7999999999999545" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="678.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox layoutY="199.0" prefHeight="424.0" prefWidth="280.0" stylesheets="@style.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="180.0">
-               <children>
-                  <Button fx:id="btn11" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" stylesheets="@style.css" text="Home" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btn1" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" text="Profile" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btn12" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" text="Service" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btn13" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" text="Payments" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="btn14" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" text="About Us" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
+            <Button fx:id="addPackages" layoutY="170.0" lineSpacing="2.0" mnemonicParsing="false" onAction="#switchToAddPackages" prefHeight="60.0" prefWidth="280.0" styleClass="button2" stylesheets="@style.css" text="Add Packages" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/worldwide.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn111" layoutY="254.0" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" styleClass="button2" stylesheets="@style.css" text="Add Hotel     " textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/hotel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             <Pane layoutY="80.0" prefHeight="71.0" prefWidth="280.0" style="-fx-background-color: #F47BDA; -fx-background-radius: 6;">
                <children>
                   <Label alignment="CENTER" layoutX="34.0" layoutY="13.0" prefHeight="46.0" prefWidth="212.0" text="Admin DashBoard" textFill="WHITE">
@@ -55,58 +49,29 @@
                   </Label>
                </children>
             </Pane>
+            <ImageView fx:id="logOutbtn" fitHeight="23.0" fitWidth="38.0" layoutX="26.0" layoutY="560.0" onMouseClicked="#LogOut" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@../../../img/logout.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="viewAllPackages" layoutY="346.0" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="280.0" styleClass="button2" stylesheets="@style.css" text="View Packages" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/destination.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
       <Pane layoutX="278.0" prefHeight="616.0" prefWidth="691.0">
          <children>
             <Pane layoutX="-41.0" layoutY="-187.0" prefHeight="260.0" prefWidth="422.0" rotate="45.0" style="-fx-background-color: #F47BDA; -fx-background-radius: 70;" />
-            <Button fx:id="addPackages" layoutX="41.0" layoutY="186.0" mnemonicParsing="false" onAction="#switchToAddPackages" prefHeight="122.0" prefWidth="186.0" styleClass="button2" stylesheets="@style.css" text="Add Packages" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../img/worldwide.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="264.0" layoutY="186.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="186.0" styleClass="button2" stylesheets="@style.css" text="Booking" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="55.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../img/booking.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="485.0" layoutY="186.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css">
-               <graphic>
-                  <Circle radius="44.0" stroke="BLACK" strokeType="INSIDE">
-                     <fill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.544950008392334" green="0.6299999952316284" blue="0.2897999882698059" opacity="0.8275076150894165" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="1.0" green="1.0" blue="1.0" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                  </Circle>
-               </graphic>
-            </Button>
-            <Button layoutX="38.0" layoutY="356.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css">
+            <Button layoutX="36.0" layoutY="103.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css">
                <graphic>
                   <Circle radius="44.0" stroke="BLACK" strokeType="INSIDE">
                      <fill>
@@ -128,7 +93,7 @@
                   </Circle>
                </graphic>
             </Button>
-            <Button layoutX="272.0" layoutY="356.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css">
+            <Button layoutX="241.0" layoutY="103.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css">
                <graphic>
                   <Circle radius="44.0" stroke="BLACK" strokeType="INSIDE">
                      <fill>
@@ -150,7 +115,7 @@
                   </Circle>
                </graphic>
             </Button>
-            <Button layoutX="485.0" layoutY="356.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css">
+            <Button layoutX="459.0" layoutY="110.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="147.0" styleClass="button2" stylesheets="@style.css">
                <graphic>
                   <Circle radius="44.0" stroke="BLACK" strokeType="INSIDE">
                      <fill>
