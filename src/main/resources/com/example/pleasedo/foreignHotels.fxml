@@ -14,17 +14,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1480.0" stylesheets="@pkge.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.foreignController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1480.0" stylesheets="@pkge.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.ForeignHotelsController">
    <children>
       <Pane layoutY="113.0" prefHeight="639.0" prefWidth="286.0" style="-fx-background-color: #636e72;" stylesheets="@pkge.css">
          <children>
-            <Button fx:id="backBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #b2bec3;" text="Back" textFill="WHITE" />
-            <Button fx:id="frnbtn" layoutX="2.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToFrnPkg" prefHeight="63.0" prefWidth="286.0" styleClass="frnbtn" stylesheets="@pkge.css" text="Foreign" textFill="WHITE">
+            <Button fx:id="backBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #b2bec3;" text="Back" textFill="WHITE" />
+            <Button fx:id="frnbtn" layoutX="2.0" layoutY="233.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="286.0" styleClass="frnbtn" stylesheets="@pkge.css" text="Foreign Hotels" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="bdbtn" layoutY="120.0" mnemonicParsing="false" onAction="#switchToPackage" prefHeight="63.0" prefWidth="286.0" stylesheets="@pkge.css" text="Bangladesh" textFill="WHITE">
+            <Button fx:id="bdbtn" layoutY="120.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="286.0" stylesheets="@pkge.css" text="BD Hotels" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
@@ -42,7 +42,7 @@
                <children>
                   <ScrollPane prefHeight="596.0" prefWidth="1166.0" style="-fx-background-color: green;" VBox.vgrow="ALWAYS">
                      <content>
-                        <GridPane fx:id="citiesGrid" prefHeight="0.0" prefWidth="0.0" styleClass="dark-background" stylesheets="@pkge.css">
+                        <GridPane fx:id="hotelsGrid" prefHeight="0.0" prefWidth="0.0" styleClass="dark-background" stylesheets="@pkge.css">
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
@@ -61,7 +61,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Text fill="#68707a" layoutX="39.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Featured">
+            <Text fill="#68707a" layoutX="39.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Featured Hotels">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -70,7 +70,7 @@
       </Pane>
       <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="113.0" prefWidth="1480.0" style="-fx-background-color: #636e72;">
          <children>
-            <Label alignment="CENTER" layoutX="470.0" layoutY="51.0" prefHeight="35.0" prefWidth="440.0" text="Travel and Tour Management System" textAlignment="CENTER" textFill="#c8cbd9">
+            <Label alignment="CENTER" layoutX="558.0" layoutY="44.0" prefHeight="35.0" prefWidth="440.0" text="Travel and Tour Management System" textAlignment="CENTER" textFill="#c8cbd9">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

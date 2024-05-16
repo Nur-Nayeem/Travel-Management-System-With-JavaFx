@@ -81,7 +81,7 @@
       </AnchorPane>
       <AnchorPane layoutX="-2.0" layoutY="-1.0" prefHeight="115.0" prefWidth="1527.0" style="-fx-background-color: #636e72;">
          <children>
-            <Label alignment="CENTER" layoutX="513.0" layoutY="51.0" prefHeight="35.0" prefWidth="440.0" text="Travel and Tour Management System" textAlignment="CENTER" textFill="#c8cbd9">
+            <Label alignment="CENTER" layoutX="539.0" layoutY="39.0" prefHeight="35.0" prefWidth="440.0" text="Travel and Tour Management System" textAlignment="CENTER" textFill="#c8cbd9">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

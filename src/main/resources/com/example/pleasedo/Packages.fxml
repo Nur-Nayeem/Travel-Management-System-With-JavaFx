@@ -3,36 +3,43 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="961.0" stylesheets="@pkge.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1480.0" stylesheets="@pkge.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.HelloController">
    <children>
-      <Pane layoutY="-2.0" prefHeight="615.0" prefWidth="204.0" style="-fx-background-color: #9754B1;" stylesheets="@pkge.css" />
-      <Pane layoutX="201.0" layoutY="-1.0" prefHeight="627.0" prefWidth="766.0" style="-fx-background-color: #7B20B6;">
+      <Pane layoutY="113.0" prefHeight="639.0" prefWidth="286.0" style="-fx-background-color: #636e72;" stylesheets="@pkge.css">
          <children>
-            <Pane layoutX="-201.0" layoutY="48.0" prefHeight="79.0" prefWidth="967.0" style="-fx-background-color: #E1E09C;">
-               <children>
-                  <Label layoutX="41.0" layoutY="24.0" text="Packages" textFill="#9d15a9">
-                     <font>
-                        <Font name="System Bold" size="22.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
+            <Button fx:id="backBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #b2bec3;" text="Back" textFill="WHITE" />
+            <Button fx:id="frnbtn" layoutX="2.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToFrnPkg" prefHeight="63.0" prefWidth="286.0" stylesheets="@pkge.css" text="Foreign" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="bdbtn" layoutY="120.0" mnemonicParsing="false" onAction="#switchToPackage" prefHeight="63.0" prefWidth="286.0" styleClass="bdbtn" stylesheets="@pkge.css" text="Bangladesh" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children></Pane>
+      <Pane layoutX="286.0" layoutY="-1.0" prefHeight="750.0" prefWidth="1194.0" style="-fx-background-color: #dfe6e9;">
+         <children>
             <Pane layoutX="297.0" layoutY="-180.0" opacity="0.47" prefHeight="200.0" prefWidth="200.0" rotate="-29.4" style="-fx-background-color: #F80047; -fx-background-radius: 70 80 100 50;" />
-            <Pane layoutX="659.0" layoutY="139.0" opacity="0.47" prefHeight="213.0" prefWidth="186.0" rotate="108.4" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
             <Pane layoutX="82.0" layoutY="177.0" opacity="0.47" prefHeight="154.0" prefWidth="124.0" rotate="105.8" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
             <Pane layoutX="677.0" layoutY="550.0" opacity="0.47" prefHeight="154.0" prefWidth="124.0" rotate="-158.6" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
             <Pane layoutX="383.0" layoutY="278.0" opacity="0.47" prefHeight="113.0" prefWidth="124.0" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
             <Pane layoutX="132.0" layoutY="536.0" opacity="0.47" prefHeight="154.0" prefWidth="124.0" rotate="125.9" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
-            <VBox layoutX="14.0" layoutY="149.0" prefHeight="452.0" prefWidth="739.0">
+            <VBox layoutX="38.0" layoutY="172.0" prefHeight="573.0" prefWidth="1105.0">
                <children>
-                  <ScrollPane prefHeight="434.0" prefWidth="739.0" style="-fx-background-color: green;" VBox.vgrow="ALWAYS">
+                  <ScrollPane prefHeight="596.0" prefWidth="1166.0" style="-fx-background-color: green;" VBox.vgrow="ALWAYS">
                      <content>
                         <GridPane fx:id="citiesGrid" prefHeight="0.0" prefWidth="0.0" styleClass="dark-background" stylesheets="@pkge.css">
                           <rowConstraints>
@@ -43,18 +50,36 @@
                   </ScrollPane>
                </children>
             </VBox>
+            <TextField layoutX="994.0" layoutY="139.0" promptText="Search Packages" />
+            <Button fx:id="searchPkg" layoutX="930.0" layoutY="132.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="63.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Text fill="#68707a" layoutX="39.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Featured BD">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
-      <Button fx:id="backBtn" layoutX="6.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="26.0" prefWidth="56.0" text="Back" textFill="WHITE" />
-      <Button fx:id="bdbtn" layoutY="158.0" mnemonicParsing="false" onAction="#switchToPackage" prefHeight="43.0" prefWidth="197.0" style="-fx-background-color: #2F2B43;" stylesheets="@pkge.css" text="Bangladesh" textFill="WHITE">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="frnbtn" layoutX="1.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToFrnPkg" prefHeight="43.0" prefWidth="197.0" stylesheets="@pkge.css" text="Foreign" textFill="WHITE">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
+      <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="113.0" prefWidth="1480.0" style="-fx-background-color: #636e72;">
+         <children>
+            <Label alignment="CENTER" layoutX="470.0" layoutY="51.0" prefHeight="35.0" prefWidth="440.0" text="Travel and Tour Management System" textAlignment="CENTER" textFill="#c8cbd9">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="exitB" fitHeight="41.0" fitWidth="38.0" layoutX="1207.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/Close%20Window.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

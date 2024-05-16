@@ -87,7 +87,7 @@ public class HelloController implements Initializable {
                     System.out.println("Error");
                 }
 
-                if(column == 2){
+                if(column == 3){
                     column = 0;
                     ++row;
                 }

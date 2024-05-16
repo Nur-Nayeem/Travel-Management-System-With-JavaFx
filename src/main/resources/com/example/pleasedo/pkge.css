@@ -1,6 +1,6 @@
 .button
 {
-    -fx-background-color:  #9754B1;
+    -fx-background-color:   #636e72;
     -fx-background-radius: 20 0 0 20;
 }
 .button:hover
@@ -21,6 +21,13 @@
 
 #backBtn: hover{
     -fx-background-color:  #524A7B;
+}
+.bdbtn{
+     -fx-background-color: #57606f;
+}
+
+.frnbtn{
+    -fx-background-color: #57606f;
 }
 
 .dark-background{
