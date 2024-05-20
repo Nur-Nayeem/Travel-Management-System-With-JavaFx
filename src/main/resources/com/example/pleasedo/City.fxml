@@ -55,7 +55,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="302.0" layoutY="204.0" text="\$" textFill="WHITE">
+      <Label layoutX="301.0" layoutY="192.0" prefHeight="48.0" prefWidth="26.0" text=" ৳" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>

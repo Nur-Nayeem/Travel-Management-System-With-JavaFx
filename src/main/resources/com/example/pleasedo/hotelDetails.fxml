@@ -11,67 +11,37 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.CityDetailsBookingController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.hotelDetailsController">
    <children>
       <Pane layoutX="-1.0" layoutY="2.0" prefHeight="480.0" prefWidth="500.0" style="-fx-background-color: #F3FFFB;">
          <children>
-            <Label fx:id="titlaPkg" layoutX="26.0" layoutY="362.0" text="Maldives Iseland">
+            <Label fx:id="titlaPkg" layoutX="26.0" layoutY="362.0" text="Hotel Name">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
             <ImageView fx:id="detailsImgPkg" fitHeight="301.0" fitWidth="382.0" layoutX="64.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="bk" layoutX="13.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToPackage" text="Back" />
-            <Label layoutX="23.0" layoutY="420.0" prefHeight="38.0" prefWidth="76.0" text="Price :">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="PricePkg" layoutX="96.0" layoutY="422.0" text=" ">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="170.0" layoutY="425.0" text="\$">
+            <Text fx:id="price" layoutX="401.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price">
                <font>
                   <Font size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="320.0" layoutY="430.0" prefHeight="35.0" prefWidth="66.0" text="Days :">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="numDays" layoutX="409.0" layoutY="432.0" prefHeight="35.0" prefWidth="7.0">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="438.0" layoutY="432.0" text="Days">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Text fill="#26b949" layoutX="326.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Seat's:">
-               <font>
-                  <Font size="18.0" />
                </font>
             </Text>
-            <Text fx:id="avleSeate" fill="#26b949" layoutX="459.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30">
+            <Text layoutX="463.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="৳">
                <font>
-                  <Font size="18.0" />
+                  <Font size="20.0" />
                </font>
             </Text>
          </children>
       </Pane>
       <Pane layoutX="502.0" layoutY="1.0" prefHeight="480.0" prefWidth="250.0" style="-fx-background-color: lightgray;">
          <children>
-            <Label layoutX="25.0" layoutY="322.0" text="Total Price: ">
+            <Label layoutX="14.0" layoutY="328.0" text="Total Price: ">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="totalPricePkg" layoutX="131.0" layoutY="322.0" prefHeight="30.0" prefWidth="76.0">
+            <Label fx:id="totalPricePkg" layoutX="123.0" layoutY="328.0" prefHeight="30.0" prefWidth="76.0">
                <font>
                   <Font size="20.0" />
                </font>
@@ -82,11 +52,6 @@
                </font>
             </Button>
             <ComboBox fx:id="numberOfSeatPkg" layoutX="161.0" layoutY="198.0" prefHeight="25.0" prefWidth="76.0" promptText="Seats" />
-            <Label layoutX="213.0" layoutY="324.0" text="\$">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
             <Text fill="#247371" layoutX="63.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Details">
                <font>
                   <Font size="18.0" />
@@ -95,15 +60,18 @@
             <Text layoutX="6.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
                <font>
                   <Font size="14.0" />
-               </font></Text>
+               </font>
+            </Text>
             <Text layoutX="8.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
                <font>
                   <Font size="14.0" />
-               </font></Text>
+               </font>
+            </Text>
             <Text layoutX="8.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile">
                <font>
                   <Font size="14.0" />
-               </font></Text>
+               </font>
+            </Text>
             <TextField fx:id="cstmrName" layoutX="56.0" layoutY="80.0" prefHeight="25.0" prefWidth="183.0" promptText="Enter name" />
             <TextField fx:id="cstmrEmail" layoutX="57.0" layoutY="116.0" prefHeight="25.0" prefWidth="183.0" promptText="Enter Email" />
             <TextField fx:id="cstmrPhone" layoutX="56.0" layoutY="157.0" prefHeight="25.0" prefWidth="183.0" promptText="Enter Mobile Number" />
@@ -112,18 +80,29 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <ComboBox fx:id="gendar" layoutX="57.0" layoutY="198.0" prefHeight="25.0" prefWidth="89.0" />
-            <Text layoutX="9.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+            <ComboBox fx:id="gendar" layoutX="57.0" layoutY="198.0" prefHeight="25.0" prefWidth="89.0" promptText="Gendar" />
+            <Text layoutX="9.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <DatePicker fx:id="dateOfTour" layoutX="55.0" layoutY="240.0" prefHeight="25.0" prefWidth="183.0" />
+            <DatePicker fx:id="dateOfTour" layoutX="55.0" layoutY="282.0" prefHeight="25.0" prefWidth="183.0" />
             <Button fx:id="ClearBtn" layoutX="182.0" layoutY="396.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: RED;" text="Clear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
+            <ComboBox fx:id="roomTypes" layoutX="88.0" layoutY="240.0" prefHeight="25.0" prefWidth="146.0" promptText="Choose" />
+            <Text layoutX="9.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="206.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="৳">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
    </children>

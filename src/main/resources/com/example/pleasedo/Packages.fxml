@@ -14,30 +14,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1480.0" stylesheets="@pkge.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1265.0" stylesheets="@pkge.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.HelloController">
    <children>
-      <Pane layoutY="113.0" prefHeight="639.0" prefWidth="286.0" style="-fx-background-color: #636e72;" stylesheets="@pkge.css">
+      <Pane layoutY="89.0" prefHeight="639.0" prefWidth="227.0" style="-fx-background-color: #636e72;" stylesheets="@pkge.css">
          <children>
-            <Button fx:id="backBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #b2bec3;" text="Back" textFill="WHITE" />
-            <Button fx:id="frnbtn" layoutX="2.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToFrnPkg" prefHeight="63.0" prefWidth="286.0" stylesheets="@pkge.css" text="Foreign" textFill="WHITE">
+            <Button fx:id="backBtn" layoutX="14.0" layoutY="66.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #b2bec3;" text="Back" textFill="WHITE" />
+            <Button fx:id="frnbtn" layoutX="2.0" layoutY="285.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="221.0" stylesheets="@pkge.css" text="Foreign" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="bdbtn" layoutY="120.0" mnemonicParsing="false" onAction="#switchToPackage" prefHeight="63.0" prefWidth="286.0" styleClass="bdbtn" stylesheets="@pkge.css" text="Bangladesh" textFill="WHITE">
+            <Button fx:id="bdbtn" layoutY="172.0" mnemonicParsing="false" onAction="#switchToPackage" prefHeight="63.0" prefWidth="227.0" styleClass="bdbtn" stylesheets="@pkge.css" text="Bangladesh" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
          </children></Pane>
-      <Pane layoutX="286.0" layoutY="-1.0" prefHeight="750.0" prefWidth="1194.0" style="-fx-background-color: #dfe6e9;">
+      <Pane fx:id="newPanes" layoutX="227.0" layoutY="-1.0" prefHeight="750.0" prefWidth="1040.0" style="-fx-background-color: #dfe6e9;">
          <children>
-            <Pane layoutX="297.0" layoutY="-180.0" opacity="0.47" prefHeight="200.0" prefWidth="200.0" rotate="-29.4" style="-fx-background-color: #F80047; -fx-background-radius: 70 80 100 50;" />
-            <Pane layoutX="82.0" layoutY="177.0" opacity="0.47" prefHeight="154.0" prefWidth="124.0" rotate="105.8" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
-            <Pane layoutX="677.0" layoutY="550.0" opacity="0.47" prefHeight="154.0" prefWidth="124.0" rotate="-158.6" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
-            <Pane layoutX="383.0" layoutY="278.0" opacity="0.47" prefHeight="113.0" prefWidth="124.0" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
-            <Pane layoutX="132.0" layoutY="536.0" opacity="0.47" prefHeight="154.0" prefWidth="124.0" rotate="125.9" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
-            <VBox layoutX="38.0" layoutY="172.0" prefHeight="573.0" prefWidth="1105.0">
+            <VBox fx:id="ScrollPaneWhite" layoutX="38.0" layoutY="172.0" prefHeight="550.0" prefWidth="980.0">
                <children>
                   <ScrollPane prefHeight="596.0" prefWidth="1166.0" style="-fx-background-color: green;" VBox.vgrow="ALWAYS">
                      <content>
@@ -50,8 +45,8 @@
                   </ScrollPane>
                </children>
             </VBox>
-            <TextField layoutX="994.0" layoutY="139.0" promptText="Search Packages" />
-            <Button fx:id="searchPkg" layoutX="930.0" layoutY="132.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="63.0" style="-fx-background-color: transparent;">
+            <TextField layoutX="841.0" layoutY="139.0" promptText="Search Packages" />
+            <Button fx:id="searchPkg" layoutX="764.0" layoutY="132.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="63.0" style="-fx-background-color: transparent;">
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -67,18 +62,13 @@
             </Text>
          </children>
       </Pane>
-      <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="113.0" prefWidth="1480.0" style="-fx-background-color: #636e72;">
+      <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="90.0" prefWidth="1268.0" style="-fx-background-color: #636e72;">
          <children>
-            <Label alignment="CENTER" layoutX="470.0" layoutY="51.0" prefHeight="35.0" prefWidth="440.0" text="Travel and Tour Management System" textAlignment="CENTER" textFill="#c8cbd9">
+            <Label alignment="CENTER" layoutX="442.0" layoutY="24.0" prefHeight="35.0" prefWidth="440.0" text="Travel and Tour Management System" textAlignment="CENTER" textFill="#c8cbd9">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <ImageView fx:id="exitB" fitHeight="41.0" fitWidth="38.0" layoutX="1207.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Resources/Close%20Window.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
    </children>

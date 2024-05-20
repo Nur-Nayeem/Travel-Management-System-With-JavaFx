@@ -125,8 +125,4 @@ public class loginUserController implements Initializable {
         });
 
     }
-    public void getUserSelection(ActionEvent event){
-        String selected = cmboxUorA.getValue();
-        System.out.println(selected);
-    }
 }

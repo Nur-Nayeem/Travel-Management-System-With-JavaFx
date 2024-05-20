@@ -41,6 +41,7 @@ public class HotelsInDashboardController implements Initializable {
     @FXML
     private Button SeeMoreFrn;
 
+
     @FXML
     private GridPane gridHtklhomeFrn;
 
@@ -51,16 +52,6 @@ public class HotelsInDashboardController implements Initializable {
     private List<Hotel> FrnHotel;
 
 
-
-    public void switchToPackage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Packages.fxml")));
-
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
     public void switchToDashBoard(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashBoard.fxml")));
 
@@ -79,8 +70,9 @@ public class HotelsInDashboardController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToFrnPkg(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("foreignController.fxml")));
+
+    public void switchToBdHotel(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("bdhotels.fxml")));
 
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
 
@@ -88,6 +80,17 @@ public class HotelsInDashboardController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void switchToFrnHotel(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("foreignHotels.fxml")));
+
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void LogOut(MouseEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginUser.fxml")));
 
@@ -120,11 +123,11 @@ public class HotelsInDashboardController implements Initializable {
                 throw new RuntimeException(e);
             }
 
-            hotelController hotelController = fxmlLoader.getController();
-            if(hotelController != null){
+            HotelController hotelcontroller = fxmlLoader.getController();
+            if(hotelcontroller != null){
                 System.out.println("Ok ");
                 try{
-                    hotelController.setData(hotel);
+                    hotelcontroller.setData(hotel);
                 }
                 catch (Exception e){
                     System.out.println("Error");
@@ -156,7 +159,7 @@ public class HotelsInDashboardController implements Initializable {
                 throw new RuntimeException(e);
             }
 
-            hotelController hotelController = fxmlLoader.getController();
+            HotelController hotelController = fxmlLoader.getController();
             if(hotelController != null){
                 System.out.println("Ok ");
                 try{

@@ -18,13 +18,13 @@
    <children>
       <Pane layoutY="113.0" prefHeight="639.0" prefWidth="286.0" style="-fx-background-color: #636e72;" stylesheets="@pkge.css">
          <children>
-            <Button fx:id="backBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #b2bec3;" text="Back" textFill="WHITE" />
-            <Button fx:id="frnbtn" layoutX="2.0" layoutY="233.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="286.0" styleClass="frnbtn" stylesheets="@pkge.css" text="Foreign Hotels" textFill="WHITE">
+            <Button fx:id="backBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #b2bec3;" text="Back" textFill="WHITE" />
+            <Button fx:id="frnbtn" layoutX="2.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchToFrnHotel" prefHeight="63.0" prefWidth="286.0" styleClass="frnbtn" stylesheets="@pkge.css" text="Foreign Hotels" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="bdbtn" layoutY="120.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="286.0" stylesheets="@pkge.css" text="BD Hotels" textFill="WHITE">
+            <Button fx:id="bdbtn" layoutY="120.0" mnemonicParsing="false" onAction="#switchToBdHotel" prefHeight="63.0" prefWidth="286.0" stylesheets="@pkge.css" text="BD Hotels" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>

@@ -30,6 +30,9 @@ import java.util.ResourceBundle;
 public class addPackagesController implements Initializable {
 
     @FXML
+    private TextField seatsField;
+
+    @FXML
     private ComboBox<String> PackageType;
 
     @FXML
@@ -51,19 +54,16 @@ public class addPackagesController implements Initializable {
     private TextField tripTo;
 
     @FXML
+    private TextField TripLocation;
+
+    @FXML
     private VBox contentArea;
 
     @FXML
     private Button ClearBtn;
 
-    @FXML
-    private Button addPkgManue;
 
-    @FXML
-    private Button deletePkgBtn;
 
-    @FXML
-    private Button updatePkgBtn;
 
     private String selectedImagePath;
 
@@ -107,22 +107,10 @@ public class addPackagesController implements Initializable {
             if (selectedFile != null) {
                 String absolutePath = selectedFile.getAbsolutePath();
                 String relativePath = absolutePath.replace("\\", "/").replaceFirst(".*/img/", "/img/");
+                System.out.println(relativePath);
                 imgLocation.setText(relativePath);
                 selectedImagePath = relativePath;
             }
-        });
-        updatePkgBtn.setOnAction(event -> {
-            try {
-                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("updatePackages.fxml")));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
         });
 
         addPackageBtn.setOnAction(event -> {
@@ -133,10 +121,14 @@ public class addPackagesController implements Initializable {
             int priceTripValue = Integer.parseInt(priceTrip.getText());
             int daysTrp = Integer.parseInt(daysTrip.getText());
             String trimmedPath = selectedImagePath;
+            int seatsTrip = Integer.parseInt(seatsField.getText());
+            String LcName = TripLocation.getText();
 
-            String sql1 = "INSERT INTO City (name, days, price, image) VALUES (?, ?, ?, ?)";
+            String sql1 = "INSERT INTO City (name, days, price, image,number_of_seats,triplocation) VALUES (?, ?, ?, ?,?,?)";
 
-            String sql2 = "INSERT INTO foreignCity (name, days, price, image) VALUES (?, ?, ?, ?)";
+            String sql2 = "INSERT INTO foreignCity (name, days, price, image,number_of_seats,triplocation) VALUES (?, ?, ?, ?,?,?)";
+
+            String CountSeatUpdate = "INSERT INTO tour_seat_count (city_name,total_seats) VALUES (?, ?)";
 
             String sql3="";
 
@@ -149,10 +141,10 @@ public class addPackagesController implements Initializable {
                 PreparedStatement statement = null;
                 if(Objects.equals(selectAddCity,"Local")){
                     statement = connection.prepareStatement(sql1);
-                    sql3 = "INSERT INTO allCity (name, days, price, image) SELECT name, days, price, image from City";
+                    sql3 = "INSERT INTO allCity (name, days, price, image,number_of_seats,triplocation) values (?, ?, ?, ?, ?,?)";
                 } else if (Objects.equals(selectAddCity,"Foreign")) {
                     statement = connection.prepareStatement(sql2);
-                    sql3 = "INSERT INTO allCity (name, days, price, image) SELECT name, days, price, image from foreignCity";
+                    sql3 = "INSERT INTO allCity (name, days, price, image,number_of_seats,triplocation) values (?, ?, ?, ?, ?,?)";
                 }
                 else {
                     System.out.println("Error insertion");
@@ -165,13 +157,29 @@ public class addPackagesController implements Initializable {
                 statement.setInt(2, daysTrp);
                 statement.setInt(3, priceTripValue);
                 statement.setString(4, trimmedPath);
+                statement.setInt(5, seatsTrip);
+                statement.setString(6, LcName);
+
+
 
 
 
                     // Execute the SQL statement
                     int rowsInserted = statement.executeUpdate();
                     if (rowsInserted > 0) {
-                        statement.executeUpdate(sql3);
+                        statement = connection.prepareStatement(sql3);
+                        statement.setString(1, nameTrip);
+                        statement.setInt(2, daysTrp);
+                        statement.setInt(3, priceTripValue);
+                        statement.setString(4, trimmedPath);
+                        statement.setInt(5, seatsTrip);
+                        statement.setString(6, LcName);
+                        statement.executeUpdate();
+
+                        statement = connection.prepareStatement(CountSeatUpdate);
+                        statement.setString(1, nameTrip);
+                        statement.setInt(2, 0);
+                        statement.executeUpdate();
                         System.out.println("A new row has been inserted successfully.");
 
             }
@@ -195,20 +203,6 @@ public class addPackagesController implements Initializable {
             stage.setScene(scene);
             stage.show();
         });
-        addPkgManue.setOnAction(event -> {
-            try {
-                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("addPackages.fxml")));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        });
-
-
-
 
 
     }

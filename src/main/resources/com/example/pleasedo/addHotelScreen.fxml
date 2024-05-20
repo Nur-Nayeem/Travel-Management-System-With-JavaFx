@@ -1,81 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="BaseLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="BaseLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="780.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.AddHotelScreenController">
    <children>
-      <AnchorPane layoutX="-5.0" layoutY="-2.0" prefHeight="105.0" prefWidth="1287.0" style="-fx-background-color: F1F2F7;">
-         <children>
-            <Label alignment="CENTER" layoutX="470.0" layoutY="51.0" prefHeight="35.0" prefWidth="440.0" text="Travel and Tour Management System" textAlignment="CENTER" textFill="#c8cbd9">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="exitB" fitHeight="41.0" fitWidth="38.0" layoutX="1207.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Resources/Close%20Window.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="-10.0" layoutY="99.0" prefHeight="699.0" prefWidth="226.0" style="-fx-background-color: F1F2F7;">
-         <children>
-            <ImageView fitHeight="67.0" fitWidth="69.0" layoutX="27.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Resources/Male%20User.png" />
-               </image>
-            </ImageView>
-            <Text fill="#68707a" layoutX="93.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@Admin" wrappingWidth="76.50000000000006">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <Text fill="#68707a" layoutX="77.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Packages" wrappingWidth="119.89999389648438">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="36.0" fitWidth="57.0" layoutX="35.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Resources/Literature.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="36.0" fitWidth="46.0" layoutX="29.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Resources/Literature.png" />
-               </image>
-            </ImageView>
-            <Text fill="#68707a" layoutX="79.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Hotels" wrappingWidth="101.5">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="36.0" fitWidth="38.0" layoutX="35.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Resources/Shopping%20Cart.png" />
-               </image>
-            </ImageView>
-            <Text fill="#68707a" layoutX="77.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Packages" wrappingWidth="140.69998168945307">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="36.0" fitWidth="57.0" layoutX="35.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Resources/Refresh.png" />
-               </image>
-            </ImageView>
-            <Text fill="#68707a" layoutX="79.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Hotels" wrappingWidth="101.5">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
+      <Label layoutX="239.0" layoutY="84.0" text="Location" textFill="#513e3e">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="locationHotel" layoutX="326.0" layoutY="87.0" prefHeight="26.0" prefWidth="194.0" promptText="Name Of the Location" />
+      <Label layoutX="30.0" layoutY="140.0" text="Name" textFill="#534545">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="hotelName" layoutX="112.0" layoutY="143.0" prefHeight="26.0" prefWidth="163.0" promptText="Name of the Hotel" />
+      <Label layoutX="290.0" layoutY="138.0" text="Image: " textFill="#403535">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="imageLocationBtn" layoutX="358.0" layoutY="143.0" mnemonicParsing="false" text="...." />
+      <TextField fx:id="imgLocation" layoutX="392.0" layoutY="143.0" prefHeight="26.0" prefWidth="130.0" promptText="Image of location" />
+      <ComboBox fx:id="hotelType" layoutX="112.0" layoutY="86.0" opacity="0.7" prefHeight="27.0" prefWidth="102.0" promptText="Select A Type" style="-fx-border-width: 0 0 2 0;" />
+      <Button fx:id="addHotelBtn" layoutX="251.0" layoutY="352.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="180.0" style="-fx-background-color: #00D885;" text="Add Hotels" textFill="WHITE" />
+      <VBox fx:id="contentArea" layoutX="539.0" layoutY="85.0" prefHeight="204.0" prefWidth="226.0" style="-fx-background-color: transparent;" />
+      <Label layoutX="30.0" layoutY="85.0" text="Type:" textFill="#3b2929">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="ClearBtn" layoutX="446.0" layoutY="352.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="92.0" style="-fx-background-color: #FF433A;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="NumOfvipRoom" layoutX="127.0" layoutY="203.0" prefHeight="26.0" prefWidth="102.0" promptText="Total vip room" />
+      <Label layoutX="30.0" layoutY="200.0" text="VIP Room" textFill="#534545">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="249.0" layoutY="201.0" text="VIP room Price" textFill="#534545">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="VipPrice" layoutX="392.0" layoutY="203.0" prefHeight="26.0" prefWidth="130.0" promptText="Vip room Price" />
+      <TextField fx:id="NumOfeconomyRoom" layoutX="125.0" layoutY="255.0" prefHeight="26.0" prefWidth="102.0" promptText="Total Economy room" />
+      <Label layoutX="30.0" layoutY="252.0" text="Economy" textFill="#534545">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="249.0" layoutY="253.0" text="Eco. room Price" textFill="#534545">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="economyPrice" layoutX="394.0" layoutY="255.0" prefHeight="26.0" prefWidth="130.0" promptText="Economy room Price" />
    </children>
 </AnchorPane>

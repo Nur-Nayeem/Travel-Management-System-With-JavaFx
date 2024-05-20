@@ -1,109 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="975.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.UpdatePackagesController">
-   <left>
-      <AnchorPane prefHeight="600.0" prefWidth="233.0" style="-fx-background-color: #0C625F;" BorderPane.alignment="CENTER">
-         <children>
-            <VBox layoutX="-3.0" layoutY="178.0" prefHeight="422.0" prefWidth="238.0">
-               <children>
-                  <Button fx:id="addPkgManue" mnemonicParsing="false" prefHeight="70.0" prefWidth="223.0" styleClass="buttonAddPkg" stylesheets="@style.css" text="Add Packages" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="updatePkgBtn" mnemonicParsing="false" prefHeight="70.0" prefWidth="223.0" style="-fx-background-color: #6FC5B9;" styleClass="buttonAddPkg" stylesheets="@style.css" text="Update Packages" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="deletePkgBtn" mnemonicParsing="false" prefHeight="70.0" prefWidth="223.0" styleClass="buttonAddPkg" stylesheets="@style.css" text="Delete Packages" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="48.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../img/pngwing.com.png" />
-               </image>
-            </ImageView>
-            <FontAwesomeIconView fx:id="back" fill="#0fb5f7" fontSmoothingType="LCD" glyphName="CHEVRON_LEFT" layoutX="25.0" layoutY="57.0" onMouseClicked="#switchToAdmin" selectionFill="#7f16ac" size="20" strokeWidth="5.0" />
-         </children>
-      </AnchorPane>
-   </left>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.UpdatePackagesController">
    <center>
       <AnchorPane prefHeight="600.0" prefWidth="670.0" style="-fx-background-color: #9CBF88;" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="600.0" prefWidth="766.0" style="-fx-background-color: #5C9385;">
+            <Pane layoutX="-7.0" prefHeight="411.0" prefWidth="762.0" style="-fx-background-color: #5C9385;">
                <children>
-                  <Pane layoutX="297.0" layoutY="-180.0" opacity="0.47" prefHeight="200.0" prefWidth="200.0" rotate="-29.4" style="-fx-background-color: #F80047; -fx-background-radius: 70 80 100 50;" />
-                  <Pane layoutX="659.0" layoutY="139.0" opacity="0.47" prefHeight="213.0" prefWidth="186.0" rotate="108.4" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
-                  <Pane layoutX="82.0" layoutY="177.0" opacity="0.47" prefHeight="154.0" prefWidth="124.0" rotate="105.8" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
-                  <Pane layoutX="677.0" layoutY="550.0" opacity="0.47" prefHeight="154.0" prefWidth="124.0" rotate="-158.6" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
-                  <Pane layoutX="383.0" layoutY="278.0" opacity="0.47" prefHeight="113.0" prefWidth="124.0" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
-                  <Pane layoutX="132.0" layoutY="536.0" opacity="0.47" prefHeight="154.0" prefWidth="124.0" rotate="125.9" style="-fx-background-color: #F80047; -fx-background-radius: 100 80 60 200;" />
-                  <Label layoutX="452.0" layoutY="187.0" text="Package" textFill="WHITE">
+                  <Label layoutX="394.0" layoutY="83.0" text="Package" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="185.0" layoutY="39.0" style="-fx-background-color: #E4A685; -fx-border-radius: 10;" text="Travel and Tour Management System" textFill="WHITE">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="451.0" layoutY="365.0" text="Price " textFill="WHITE">
+                  <Label layoutX="393.0" layoutY="267.0" text="Price " textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="priceTrip" layoutX="534.0" layoutY="368.0" prefHeight="25.0" prefWidth="108.0" promptText="Price" />
-                  <Label layoutX="452.0" layoutY="248.0" text="Day's " textFill="WHITE">
+                  <TextField fx:id="priceTrip" layoutX="476.0" layoutY="264.0" prefHeight="25.0" prefWidth="108.0" promptText="Price" />
+                  <Label layoutX="394.0" layoutY="144.0" text="Location" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="daysTrip" layoutX="537.0" layoutY="253.0" prefHeight="25.0" prefWidth="184.0" promptText="Days" />
-                  <Label layoutX="452.0" layoutY="314.0" text="Image" textFill="WHITE">
+                  <TextField fx:id="daysTrip" layoutX="605.0" layoutY="264.0" prefHeight="25.0" prefWidth="58.0" promptText="Days" />
+                  <Label layoutX="394.0" layoutY="210.0" text="Image" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="imageLocationBtn" layoutX="534.0" layoutY="316.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="31.0" text="...." />
-                  <TextField fx:id="imgLocation" layoutX="574.0" layoutY="316.0" prefHeight="25.0" prefWidth="149.0" promptText="Image of location" />
-                  <ComboBox fx:id="PackageType" layoutX="537.0" layoutY="140.0" opacity="0.7" prefHeight="27.0" prefWidth="141.0" promptText="Select A Type" style="-fx-border-width: 0 0 2 0;" />
-                  <Button fx:id="updateBtn" layoutX="435.0" layoutY="440.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="180.0" style="-fx-background-color: #00D885;" text="Update" textFill="WHITE" />
-                  <VBox fx:id="contentArea" layoutX="37.0" layoutY="146.0" prefHeight="338.0" prefWidth="366.0" style="-fx-background-color: transparent;" />
-                  <Label layoutX="452.0" layoutY="139.0" text="Type" textFill="WHITE">
+                  <Button fx:id="imageLocationBtn" layoutX="476.0" layoutY="212.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="31.0" text="...." />
+                  <TextField fx:id="imgLocation" layoutX="516.0" layoutY="212.0" prefHeight="25.0" prefWidth="149.0" promptText="Image of location" />
+                  <ComboBox fx:id="PackageType" layoutX="479.0" layoutY="36.0" opacity="0.7" prefHeight="27.0" prefWidth="141.0" promptText="Select A Type" style="-fx-border-width: 0 0 2 0;" />
+                  <Button fx:id="updateBtn" layoutX="377.0" layoutY="336.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="180.0" style="-fx-background-color: #00D885;" text="Update" textFill="WHITE" />
+                  <VBox fx:id="contentArea" layoutX="56.0" layoutY="78.0" prefHeight="233.0" prefWidth="280.0" style="-fx-background-color: transparent;" />
+                  <Label layoutX="400.0" layoutY="35.0" text="Type" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="ClearBtn" layoutX="630.0" layoutY="440.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="92.0" style="-fx-background-color: #FF433A;" text="Clear" textFill="WHITE">
+                  <Button fx:id="ClearBtn" layoutX="572.0" layoutY="336.0" mnemonicParsing="false" onAction="#Clear" prefHeight="41.0" prefWidth="92.0" style="-fx-background-color: #FF433A;" text="Clear" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <ComboBox fx:id="selectLocation" layoutX="537.0" layoutY="189.0" prefHeight="25.0" prefWidth="184.0" promptText="Select To Update" />
-                  <Label layoutX="294.0" layoutY="97.0" prefHeight="41.0" prefWidth="178.0" text="Update Packages" textFill="#fff307">
+                  <ComboBox fx:id="selectLocation" layoutX="479.0" layoutY="85.0" prefHeight="25.0" prefWidth="184.0" promptText="Select To Update" />
+                  <Label layoutX="45.0" layoutY="16.0" prefHeight="41.0" prefWidth="178.0" text="Update Packages" textFill="#fff307">
                      <font>
                         <Font name="Calibri Bold" size="24.0" />
                      </font>
                   </Label>
+                  <TextField fx:id="tripLcnUpdate" layoutX="483.0" layoutY="147.0" prefHeight="25.0" prefWidth="180.0" promptText="Trip Location" />
                </children>
             </Pane>
          </children>

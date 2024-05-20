@@ -15,9 +15,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1526.0" style="-fx-background-color: #dfe6e9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.buttonController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1265.0" style="-fx-background-color: #dfe6e9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.buttonController">
    <children>
-      <AnchorPane prefHeight="781.0" prefWidth="346.0" style="-fx-background-color: #68707a;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1174.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="751.0" prefWidth="265.0" style="-fx-background-color: #68707a;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1000.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox layoutX="1.0" layoutY="195.2" prefHeight="477.0" prefWidth="342.0" stylesheets="@style.css" AnchorPane.bottomAnchor="109.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="195.0">
                <children>
@@ -63,9 +63,9 @@
                   </Button>
                </children>
             </VBox>
-            <Pane layoutY="115.0" prefHeight="71.0" prefWidth="346.0" style="-fx-background-color: #b2bec3; -fx-background-radius: 6;">
+            <Pane layoutY="115.0" prefHeight="71.0" prefWidth="269.0" style="-fx-background-color: #b2bec3; -fx-background-radius: 6;">
                <children>
-                  <Label alignment="CENTER" layoutX="59.0" layoutY="13.0" prefHeight="46.0" prefWidth="238.0" text="\@User" textFill="WHITE">
+                  <Label alignment="CENTER" layoutX="16.0" layoutY="13.0" prefHeight="46.0" prefWidth="238.0" text="\@User" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -79,16 +79,16 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="-2.0" layoutY="-1.0" prefHeight="115.0" prefWidth="1527.0" style="-fx-background-color: #636e72;">
+      <AnchorPane layoutX="-2.0" layoutY="-1.0" prefHeight="115.0" prefWidth="1271.0" style="-fx-background-color: #636e72;">
          <children>
-            <Label alignment="CENTER" layoutX="513.0" layoutY="51.0" prefHeight="35.0" prefWidth="440.0" text="Travel and Tour Management System" textAlignment="CENTER" textFill="#c8cbd9">
+            <Label alignment="CENTER" layoutX="442.0" layoutY="38.0" prefHeight="35.0" prefWidth="440.0" text="Travel and Tour Management System" textAlignment="CENTER" textFill="#c8cbd9">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <HBox layoutX="356.0" layoutY="190.0" prefHeight="248.0" prefWidth="1167.0" style="-fx-background-color: gray;">
+      <HBox layoutX="310.0" layoutY="190.0" prefHeight="235.0" prefWidth="946.0" style="-fx-background-color: gray;">
          <children>
             <ScrollPane prefHeight="228.0" prefWidth="1168.0">
                <content>
@@ -101,7 +101,7 @@
             </ScrollPane>
          </children>
       </HBox>
-      <HBox layoutX="356.0" layoutY="501.0" prefHeight="248.0" prefWidth="1167.0" style="-fx-background-color: gray;">
+      <HBox layoutX="310.0" layoutY="488.0" prefHeight="227.0" prefWidth="946.0" style="-fx-background-color: gray;">
          <children>
             <ScrollPane prefHeight="238.0" prefWidth="1168.0">
                <content>
@@ -114,22 +114,22 @@
             </ScrollPane>
          </children>
       </HBox>
-      <Text fill="#68707a" layoutX="365.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BD Packages">
+      <Text fill="#68707a" layoutX="308.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BD Packages">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#68707a" layoutX="365.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Foreign Packages">
+      <Text fill="#68707a" layoutX="311.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Foreign Packages">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="SeeMoreBd" layoutX="1404.0" layoutY="431.0" mnemonicParsing="false" onAction="#switchToPackage" style="-fx-background-color: transparent;" text="See more.." textFill="#68707a">
+      <Button fx:id="SeeMoreBd" layoutX="1149.0" layoutY="430.0" mnemonicParsing="false" onAction="#switchToPackage" style="-fx-background-color: transparent;" text="See more.." textFill="#68707a">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="SeeMoreFrn" layoutX="1403.0" layoutY="742.0" mnemonicParsing="false" onAction="#switchToFrnPkg" style="-fx-background-color: transparent;" text="See more.." textFill="#68707a">
+      <Button fx:id="SeeMoreFrn" layoutX="1158.0" layoutY="715.0" mnemonicParsing="false" onAction="#switchToPackage" style="-fx-background-color: transparent;" text="See more.." textFill="#68707a">
          <font>
             <Font size="18.0" />
          </font>

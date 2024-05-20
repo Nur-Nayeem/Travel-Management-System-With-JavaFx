@@ -5,6 +5,7 @@ public class Hotel {
     private String hotelName;
     private String imgSrc;
 
+
     public String getLocationName() {
         return locationName;
     }

@@ -6,7 +6,7 @@ public class CityDetails {
     private String nbDay;
     private String price;
     private String TotalPrice;
-
+    private int seatAbailable;
 
     public CityDetails() {
     }
@@ -49,5 +49,11 @@ public class CityDetails {
 
     public void setTotalPrice(String TotalPrice) {
         this.TotalPrice = TotalPrice;
+    }
+    public int getSeatAbailable(){
+        return this.seatAbailable;
+    }
+    public void setSeatAbailable(int seatAbailable){
+        this.seatAbailable = seatAbailable;
     }
 }

@@ -1,0 +1,25 @@
+.table-view {
+    -fx-font-size: 14px;
+    -fx-background-color: #f0f0f0;
+}
+
+.table-column {
+    -fx-alignment: CENTER;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2a9df4;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: #2a9df4;
+}
+
+.table-view .cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dcdcdc;
+}
+
+.table-view .cell:selected {
+    -fx-background-color: #87cefa;
+}
