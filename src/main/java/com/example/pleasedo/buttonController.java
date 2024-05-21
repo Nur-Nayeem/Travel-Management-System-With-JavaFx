@@ -41,6 +41,9 @@ public class buttonController implements Initializable {
     @FXML
     private Button SeeMoreFrn;
 
+    @FXML
+    private Button hotelBtn;
+
 
     @FXML
     private GridPane gridPkghome;
@@ -62,25 +65,6 @@ public class buttonController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToDashBoard(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashBoard.fxml")));
-
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void switchToHotelDashboard(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hotelsInDashboard.fxml")));
-
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
 
     public void LogOut(MouseEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginUser.fxml")));
@@ -96,6 +80,50 @@ public class buttonController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+        SeeMoreBd.setOnAction(event -> {
+            try {
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Packages.fxml")));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        });
+
+
+        pkgBtn.setOnAction(event -> {
+            try {
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashBoard.fxml")));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        });
+
+        hotelBtn.setOnAction(event -> {
+            try {
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hotelsInDashboard.fxml")));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        });
 
 
         cities = new ArrayList<>(getCities());
@@ -126,7 +154,6 @@ public class buttonController implements Initializable {
                 catch (Exception e){
                     System.out.println("Error");
                 }
-
                 if(column == 4){
                     break;
                 }
@@ -246,16 +273,5 @@ public class buttonController implements Initializable {
         return ls;
 
     }
-
-
-
-
-//    public void switchToDashBoard(ActionEvent event) throws IOException{
-//        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashBoard.fxml")));
-//        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
-//    }
 
 }

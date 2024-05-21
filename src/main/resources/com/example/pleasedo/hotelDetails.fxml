@@ -46,7 +46,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button fx:id="bookPkg" layoutX="24.0" layoutY="396.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: FFB500;" text="Book Now" textFill="WHITE">
+            <Button fx:id="bookPkg" layoutX="24.0" layoutY="396.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="212.0" style="-fx-background-color: FFB500;" text="Book Now" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -87,11 +87,6 @@
                </font>
             </Text>
             <DatePicker fx:id="dateOfTour" layoutX="55.0" layoutY="282.0" prefHeight="25.0" prefWidth="183.0" />
-            <Button fx:id="ClearBtn" layoutX="182.0" layoutY="396.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: RED;" text="Clear" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
             <ComboBox fx:id="roomTypes" layoutX="88.0" layoutY="240.0" prefHeight="25.0" prefWidth="146.0" promptText="Choose" />
             <Text layoutX="9.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Type">
                <font>

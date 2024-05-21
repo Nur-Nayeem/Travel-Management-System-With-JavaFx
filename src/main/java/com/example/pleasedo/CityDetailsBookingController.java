@@ -182,6 +182,8 @@ public class CityDetailsBookingController implements Initializable {
 
 
                         if (rowsUpdated > 0) {
+                            showAlert(Alert.AlertType.INFORMATION, "Successfully Booked", "Package Book Successful");
+
                             System.out.println("Booking Done!");
                         }
                         avleSeate.setText(String.valueOf(availSeat - bookSeat));
@@ -207,6 +209,8 @@ public class CityDetailsBookingController implements Initializable {
 
                         }catch (SQLException e)
                         {
+                            showAlert(Alert.AlertType.ERROR, "Booking Failed", "Bus Is full");
+
                             System.out.println("Bus Is full manage a new Bus");
                         }
 
@@ -218,13 +222,17 @@ public class CityDetailsBookingController implements Initializable {
 
                 }
                 else {
-                    System.out.println("Connecting problem");
+                    showAlert(Alert.AlertType.ERROR, "Booking Failed", "Invalied Seats");
+
+                    System.out.println("Invalid seats");
                 }
 
 
 
             }
             else{
+                showAlert(Alert.AlertType.ERROR, "Booking Failed", "Please filled the input fileds");
+
                 System.out.println("Text fields are empty");
             }
         });
@@ -274,6 +282,13 @@ public class CityDetailsBookingController implements Initializable {
         avleSeate.setText(String.valueOf(cityDetails.getSeatAbailable()));
 
 
+    }
+    private void showAlert(Alert.AlertType alertType, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }

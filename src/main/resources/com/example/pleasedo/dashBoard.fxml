@@ -21,7 +21,7 @@
          <children>
             <VBox layoutX="1.0" layoutY="195.2" prefHeight="477.0" prefWidth="342.0" stylesheets="@style.css" AnchorPane.bottomAnchor="109.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="195.0">
                <children>
-                  <Button fx:id="pkgBtn" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="84.0" prefWidth="342.0" stylesheets="@style.css" text="Packages" textFill="WHITE">
+                  <Button fx:id="pkgBtn" mnemonicParsing="false" prefHeight="84.0" prefWidth="342.0" stylesheets="@style.css" text="Packages" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -37,7 +37,7 @@
                         <String fx:value="pkgBtn" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="hotelBtn" mnemonicParsing="false" onAction="#switchToHotelDashboard" prefHeight="79.0" prefWidth="342.0" styleClass="button2" stylesheets="@style.css" text="   Hotels" textFill="WHITE">
+                  <Button fx:id="hotelBtn" mnemonicParsing="false" prefHeight="79.0" prefWidth="342.0" styleClass="button2" stylesheets="@style.css" text="   Hotels" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -124,7 +124,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="SeeMoreBd" layoutX="1149.0" layoutY="430.0" mnemonicParsing="false" onAction="#switchToPackage" style="-fx-background-color: transparent;" text="See more.." textFill="#68707a">
+      <Button fx:id="SeeMoreBd" layoutX="1149.0" layoutY="430.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="See more.." textFill="#68707a">
          <font>
             <Font size="18.0" />
          </font>

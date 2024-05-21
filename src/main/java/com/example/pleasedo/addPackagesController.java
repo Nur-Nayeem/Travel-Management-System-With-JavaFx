@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -116,49 +117,50 @@ public class addPackagesController implements Initializable {
         addPackageBtn.setOnAction(event -> {
 
             // SQL query to insert data into table
+            if(tripTo.getText()!=null && priceTrip.getText()!=null && daysTrip.getText()!=null && imgLocation.getText()!=null && seatsField.getText()!=null && TripLocation.getText()!=null){
 
-            String nameTrip = tripTo.getText();
-            int priceTripValue = Integer.parseInt(priceTrip.getText());
-            int daysTrp = Integer.parseInt(daysTrip.getText());
-            String trimmedPath = selectedImagePath;
-            int seatsTrip = Integer.parseInt(seatsField.getText());
-            String LcName = TripLocation.getText();
+                String nameTrip = tripTo.getText();
+                int priceTripValue = Integer.parseInt(priceTrip.getText());
+                int daysTrp = Integer.parseInt(daysTrip.getText());
+                String trimmedPath = selectedImagePath;
+                int seatsTrip = Integer.parseInt(seatsField.getText());
+                String LcName = TripLocation.getText();
 
-            String sql1 = "INSERT INTO City (name, days, price, image,number_of_seats,triplocation) VALUES (?, ?, ?, ?,?,?)";
+                String sql1 = "INSERT INTO City (name, days, price, image,number_of_seats,triplocation) VALUES (?, ?, ?, ?,?,?)";
 
-            String sql2 = "INSERT INTO foreignCity (name, days, price, image,number_of_seats,triplocation) VALUES (?, ?, ?, ?,?,?)";
+                String sql2 = "INSERT INTO foreignCity (name, days, price, image,number_of_seats,triplocation) VALUES (?, ?, ?, ?,?,?)";
 
-            String CountSeatUpdate = "INSERT INTO tour_seat_count (city_name,total_seats) VALUES (?, ?)";
+                String CountSeatUpdate = "INSERT INTO tour_seat_count (city_name,total_seats) VALUES (?, ?)";
 
-            String sql3="";
-
-
-
-
-            try {
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin", "root", "");
-                System.out.println("Connection");
-                PreparedStatement statement = null;
-                if(Objects.equals(selectAddCity,"Local")){
-                    statement = connection.prepareStatement(sql1);
-                    sql3 = "INSERT INTO allCity (name, days, price, image,number_of_seats,triplocation) values (?, ?, ?, ?, ?,?)";
-                } else if (Objects.equals(selectAddCity,"Foreign")) {
-                    statement = connection.prepareStatement(sql2);
-                    sql3 = "INSERT INTO allCity (name, days, price, image,number_of_seats,triplocation) values (?, ?, ?, ?, ?,?)";
-                }
-                else {
-                    System.out.println("Error insertion");
-                }
+                String sql3="";
 
 
-                // Set values for parameters
 
-                statement.setString(1, nameTrip);
-                statement.setInt(2, daysTrp);
-                statement.setInt(3, priceTripValue);
-                statement.setString(4, trimmedPath);
-                statement.setInt(5, seatsTrip);
-                statement.setString(6, LcName);
+
+                try {
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin", "root", "");
+                    System.out.println("Connection");
+                    PreparedStatement statement = null;
+                    if(Objects.equals(selectAddCity,"Local")){
+                        statement = connection.prepareStatement(sql1);
+                        sql3 = "INSERT INTO allCity (name, days, price, image,number_of_seats,triplocation) values (?, ?, ?, ?, ?,?)";
+                    } else if (Objects.equals(selectAddCity,"Foreign")) {
+                        statement = connection.prepareStatement(sql2);
+                        sql3 = "INSERT INTO allCity (name, days, price, image,number_of_seats,triplocation) values (?, ?, ?, ?, ?,?)";
+                    }
+                    else {
+                        System.out.println("Error insertion");
+                    }
+
+
+                    // Set values for parameters
+
+                    statement.setString(1, nameTrip);
+                    statement.setInt(2, daysTrp);
+                    statement.setInt(3, priceTripValue);
+                    statement.setString(4, trimmedPath);
+                    statement.setInt(5, seatsTrip);
+                    statement.setString(6, LcName);
 
 
 
@@ -180,15 +182,24 @@ public class addPackagesController implements Initializable {
                         statement.setString(1, nameTrip);
                         statement.setInt(2, 0);
                         statement.executeUpdate();
+                        showAlert(Alert.AlertType.INFORMATION, "Add Packages", "successfully added Packages");
+
                         System.out.println("A new row has been inserted successfully.");
 
+                    }
+                }catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+                System.out.println("Trip Name: " + nameTrip + "\nPrice: " + priceTripValue + "\nImage Location: " + trimmedPath + "\nDay's: " + daysTrp);
+                System.out.println(getClass().getResource("City.fxml"));
+                insertExternalFxml(nameTrip,priceTripValue,daysTrp,trimmedPath);
+
+            }else {
+                showAlert(Alert.AlertType.ERROR, "Adding Failed", "Please filled the input fileds");
+
             }
-            }catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-            System.out.println("Trip Name: " + nameTrip + "\nPrice: " + priceTripValue + "\nImage Location: " + trimmedPath + "\nDay's: " + daysTrp);
-            System.out.println(getClass().getResource("City.fxml"));
-            insertExternalFxml(nameTrip,priceTripValue,daysTrp,trimmedPath);
+
+
 
         });
 
@@ -247,5 +258,12 @@ public class addPackagesController implements Initializable {
                     }
                     contentArea.getChildren().add(pane);
                 }
+    }
+    private void showAlert(Alert.AlertType alertType, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

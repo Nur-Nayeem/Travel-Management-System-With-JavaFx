@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
@@ -8,6 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #075B95;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.AdminDashboardController">
    <children>
@@ -27,7 +29,7 @@
                   <Image url="@../../../img/logout.png" />
                </image>
             </ImageView>
-            <Button fx:id="viewAllPackages" layoutX="28.0" layoutY="374.0" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="230.0" styleClass="button2" stylesheets="@style.css" text="View Packages" textFill="WHITE">
+            <Button fx:id="viewAllPackages" layoutX="29.0" layoutY="374.0" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="230.0" styleClass="menu-button" stylesheets="@style.css" text="View Packages" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
@@ -39,7 +41,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="TourBuses" layoutX="23.0" layoutY="468.0" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="230.0" styleClass="button2" stylesheets="@style.css" text="Tour Buses" textFill="WHITE">
+            <Button fx:id="TourBuses" layoutX="29.0" layoutY="468.0" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="230.0" styleClass="menu-button" stylesheets="@style.css" text="Tour Buses" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
@@ -51,7 +53,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="customersBtn" layoutX="20.0" layoutY="562.0" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="237.0" styleClass="button2" stylesheets="@style.css" text="Customers" textFill="WHITE">
+            <Button fx:id="customersBtn" layoutX="29.0" layoutY="562.0" lineSpacing="2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="230.0" styleClass="menu-button" stylesheets="@style.css" text="Customers" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
@@ -63,11 +65,11 @@
                   </ImageView>
                </graphic>
             </Button>
-            <MenuButton fx:id="menuePackages" layoutX="31.0" layoutY="187.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="229.0" styleClass="button2" stylesheets="@style.css" text="Packages Modify" textFill="WHITE">
+            <MenuButton fx:id="menuePackages" layoutX="31.0" layoutY="187.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="229.0" stylesheets="@style.css" text="Packages Modify" textFill="WHITE">
               <items>
                 <MenuItem fx:id="addPackages" mnemonicParsing="false" text="Add Packages" />
                 <MenuItem fx:id="updatePkg" mnemonicParsing="false" text="Update Packages" />
-                 <MenuItem mnemonicParsing="false" text="Delete Packages" />
+                 <MenuItem fx:id="deleteMnoPkg" mnemonicParsing="false" text="Delete Packages" />
               </items>
                <font>
                   <Font size="16.0" />
@@ -80,10 +82,10 @@
                   </ImageView>
                </graphic>
             </MenuButton>
-            <MenuButton fx:id="HotelManage" layoutX="31.0" layoutY="277.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="229.0" styleClass="button2" stylesheets="@style.css" text="Hotale Mange" textFill="WHITE">
+            <MenuButton fx:id="HotelManage" layoutX="31.0" layoutY="277.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="229.0" stylesheets="@style.css" text="Hotale Mange" textFill="WHITE">
                <items>
                   <MenuItem fx:id="addHotelBtn" mnemonicParsing="false" text="Add Hotel" />
-                  <MenuItem mnemonicParsing="false" text="Update Hotel" />
+                  <MenuItem fx:id="updateHotelMnoBtn" mnemonicParsing="false" text="Update Hotel" />
                   <MenuItem mnemonicParsing="false" text="Delete Hotel" />
                </items>
                <font>
@@ -99,6 +101,84 @@
             </MenuButton>
          </children>
       </AnchorPane>
-      <Pane fx:id="TableOfBusses" layoutX="309.0" layoutY="208.0" prefHeight="474.0" prefWidth="872.0" />
+      <Pane fx:id="TableOfBusses" layoutX="309.0" layoutY="208.0" prefHeight="474.0" prefWidth="872.0">
+         <children>
+            <Label layoutX="29.0" layoutY="19.0" prefHeight="35.0" prefWidth="210.0" styleClass="lblAdminDashboard" stylesheets="@style.css" text="Available Packages:" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Pane layoutX="50.0" layoutY="112.0" prefHeight="116.0" prefWidth="128.0" styleClass="dashboard-label" stylesheets="@style.css">
+               <children>
+                  <Text fx:id="totalBdPkg" fill="WHITE" layoutX="35.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="38" wrappingWidth="58.200012207031364">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="13.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BD Tour Packages">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Text fx:id="totalpkg" fill="WHITE" layoutX="261.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="76" wrappingWidth="83.71923828124977">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <Label layoutX="607.0" layoutY="19.0" prefHeight="35.0" prefWidth="184.0" styleClass="lblAdminDashboard" stylesheets="@style.css" text="Available Hotels:" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Text fx:id="totalHtl" fill="WHITE" layoutX="802.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30" wrappingWidth="58.200012207031364">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Text>
+            <Pane layoutX="239.0" layoutY="112.0" prefHeight="116.0" prefWidth="128.0" styleClass="dashboard-label" stylesheets="@style.css">
+               <children>
+                  <Text fx:id="totalFrnPkg" fill="WHITE" layoutX="35.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="34" wrappingWidth="58.200012207031364">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Foreign Tour Packages">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="425.0" layoutY="112.0" prefHeight="116.0" prefWidth="128.0" styleClass="dashboard-label" stylesheets="@style.css">
+               <children>
+                  <Text fx:id="TotalBdHtl" fill="WHITE" layoutX="35.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18" wrappingWidth="58.200012207031364">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="36.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BD Hotels">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="618.0" layoutY="112.0" prefHeight="116.0" prefWidth="128.0" styleClass="dashboard-label" stylesheets="@style.css">
+               <children>
+                  <Text fx:id="totalFrnHtl" fill="WHITE" layoutX="35.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12" wrappingWidth="58.200012207031364">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="22.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Foreign Hotels">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children></Pane>
    </children>
 </AnchorPane>

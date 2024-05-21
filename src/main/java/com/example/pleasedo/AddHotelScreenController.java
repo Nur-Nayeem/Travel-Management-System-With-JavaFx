@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -121,56 +122,41 @@ public class AddHotelScreenController implements Initializable {
 
             // SQL query to insert data into table
 
-            String location = locationHotel.getText();
-            String name = hotelName.getText();
-            int numVipRoom = Integer.parseInt(NumOfvipRoom.getText());
-            int numEcoRoom = Integer.parseInt(NumOfeconomyRoom.getText());
+            if(locationHotel.getText()!=null && hotelName.getText()!= null && NumOfvipRoom.getText()!=null && NumOfeconomyRoom.getText()!=null && VipPrice.getText()!=null && economyPrice.getText()!=null && imgLocation.getText()!=null){
 
-            int priceVip = Integer.parseInt(VipPrice.getText());
-            int priceEco = Integer.parseInt(economyPrice.getText());
-           // int totalRoom = numVipRoom + numEcoRoom;
-            String trimmedPath = selectedImagePath;
+                String location = locationHotel.getText();
+                String name = hotelName.getText();
+                int numVipRoom = Integer.parseInt(NumOfvipRoom.getText());
+                int numEcoRoom = Integer.parseInt(NumOfeconomyRoom.getText());
 
-            String sql1 = "INSERT INTO bdhotel (location, name, num_of_eco_room,num_of_vip_room,eco_room_price,vip_room_price, image) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                int priceVip = Integer.parseInt(VipPrice.getText());
+                int priceEco = Integer.parseInt(economyPrice.getText());
+                // int totalRoom = numVipRoom + numEcoRoom;
+                String trimmedPath = selectedImagePath;
 
-            String sql2 = "INSERT INTO foreignhotel (location, name, num_of_eco_room,num_of_vip_room,eco_room_price,vip_room_price, image) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                String sql1 = "INSERT INTO bdhotel (location, name, num_of_eco_room,num_of_vip_room,eco_room_price,vip_room_price, image) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-
-            String sql3 = "INSERT INTO allhotel (location, name, num_of_eco_room,num_of_vip_room,eco_room_price,vip_room_price, image) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
+                String sql2 = "INSERT INTO foreignhotel (location, name, num_of_eco_room,num_of_vip_room,eco_room_price,vip_room_price, image) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 
+                String sql3 = "INSERT INTO allhotel (location, name, num_of_eco_room,num_of_vip_room,eco_room_price,vip_room_price, image) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 
-            try {
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin", "root", "");
-                System.out.println("Connection");
-                PreparedStatement statement = null,statement2=null;
-                if(Objects.equals(selectAddCity,"Local")){
-                    statement = connection.prepareStatement(sql1);
-                } else if (Objects.equals(selectAddCity,"Foreign")) {
-                    statement = connection.prepareStatement(sql2);
-                }
-                else {
-                    System.out.println("Error insertion");
-                }
-
-                statement.setString(1, location);
-                statement.setString(2, name);
-
-                statement.setInt(3, numEcoRoom);
-                statement.setInt(4, numVipRoom);
-                statement.setInt(5, priceEco);
-                statement.setInt(6, priceVip);
-                statement.setString(7, trimmedPath);
-                //statement.setInt(8, totalRoom);
 
 
-                // Execute the SQL statement
-                int rowsInserted = statement.executeUpdate();
-                if (rowsInserted > 0) {
 
-                    statement = connection.prepareStatement(sql3);
+                try {
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/admin", "root", "");
+                    System.out.println("Connection");
+                    PreparedStatement statement = null,statement2=null;
+                    if(Objects.equals(selectAddCity,"Local")){
+                        statement = connection.prepareStatement(sql1);
+                    } else if (Objects.equals(selectAddCity,"Foreign")) {
+                        statement = connection.prepareStatement(sql2);
+                    }
+                    else {
+                        System.out.println("Error insertion");
+                    }
 
                     statement.setString(1, location);
                     statement.setString(2, name);
@@ -180,16 +166,41 @@ public class AddHotelScreenController implements Initializable {
                     statement.setInt(5, priceEco);
                     statement.setInt(6, priceVip);
                     statement.setString(7, trimmedPath);
-                    statement.executeUpdate();
-                    System.out.println("A new row has been inserted successfully.");
+                    //statement.setInt(8, totalRoom);
 
+
+                    // Execute the SQL statement
+                    int rowsInserted = statement.executeUpdate();
+                    if (rowsInserted > 0) {
+
+                        statement = connection.prepareStatement(sql3);
+
+                        statement.setString(1, location);
+                        statement.setString(2, name);
+
+                        statement.setInt(3, numEcoRoom);
+                        statement.setInt(4, numVipRoom);
+                        statement.setInt(5, priceEco);
+                        statement.setInt(6, priceVip);
+                        statement.setString(7, trimmedPath);
+                        statement.executeUpdate();
+                        showAlert(Alert.AlertType.INFORMATION, "Add Hotel", "successfully added hotel");
+
+                        System.out.println("A new row has been inserted successfully.");
+
+                    }
+                }catch (SQLException ex) {
+                    ex.printStackTrace();
                 }
-            }catch (SQLException ex) {
-                ex.printStackTrace();
+                insertExternalFxml(location,name,trimmedPath);
+
+            } else {
+                showAlert(Alert.AlertType.ERROR, "Adding Failed", "Please filled the input fileds");
+
             }
-            System.out.println("Location: " + location + "\nname: " + hotelName + "\nImage Location: " + trimmedPath );
-            System.out.println(getClass().getResource("hotel.fxml"));
-            insertExternalFxml(location,name,trimmedPath);
+
+
+
 
         });
 
@@ -236,5 +247,13 @@ public class AddHotelScreenController implements Initializable {
             }
             contentArea.getChildren().add(pane);
         }
+    }
+
+    private void showAlert(Alert.AlertType alertType, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

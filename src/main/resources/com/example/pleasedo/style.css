@@ -44,4 +44,57 @@
 
 }
 
+.lblAdminDashboard{
+    -fx-font-size: 18px;                /* Font size */
+    -fx-font-weight: bold;              /* Bold font */
+    -fx-text-fill: #FFFFFF;             /* Text color */
+    -fx-background-color: #2E86C1;      /* Background color */
+    -fx-padding: 10px;                  /* Padding inside the label */         /* Border color */           /* Border width */
+    -fx-border-radius: 3px;             /* Rounded corners for the border */
+    -fx-background-radius: 3px;         /* Rounded corners for the background */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0, 0, 1); /* Drop shadow effect */
+
+}
+
+
+.dashboard-label {
+    -fx-font-size: 18px;                /* Font size */
+    -fx-font-weight: bold;              /* Bold font */
+    -fx-text-fill: #FFFFFF;             /* Text color */
+    -fx-background-color: #2E86C1;      /* Background color */
+    -fx-padding: 10px;                  /* Padding inside the label */         /* Border color */           /* Border width */
+    -fx-border-radius: 20px;             /* Rounded corners for the border */
+    -fx-background-radius: 20px;         /* Rounded corners for the background */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0, 0, 1); /* Drop shadow effect */
+    -fx-alignment: center;              /* Center align text */
+}
+
+
+/* styles.css */
+.menu-button {
+    -fx-background-color: #2E86C1; /* Green background */
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-border-radius: 10px;             /* Rounded corners for the border */
+    -fx-background-radius: 10px;
+}
+.menu-button:hover {
+    -fx-background-color: #524A7B; /* Green background */
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 16px;
+
+}
+
+.menu-item {
+    -fx-background-color: #f9f9f9; /* Light grey background */
+    -fx-text-fill: #333; /* Dark text */
+    -fx-padding: 8px 30px;
+    -fx-font-size: 14px;
+}
+
+.menu-item:hover {
+    -fx-background-color: #ddd; /* Darker grey on hover */
+    -fx-text-fill: black; /* Black text on hover */
+}
 

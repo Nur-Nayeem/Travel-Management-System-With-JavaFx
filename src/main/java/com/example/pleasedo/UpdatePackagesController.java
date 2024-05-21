@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -33,15 +34,6 @@ public class UpdatePackagesController implements Initializable {
     private ComboBox<String> selectLocation;
 
     @FXML
-    private Button addPkgManue;
-
-    @FXML
-    private Button deletePkgBtn;
-
-    @FXML
-    private Button updatePkgBtn;
-
-    @FXML
     private TextField daysTrip;
 
     @FXML
@@ -61,15 +53,7 @@ public class UpdatePackagesController implements Initializable {
     private VBox contentArea;
 
     @FXML
-    private Button ClearBtn;
-
-
-
-    @FXML
     private Button updateBtn;
-
-
-    private String SelectTripName;
 
     private String selectedImagePath;
 
@@ -145,53 +129,62 @@ public class UpdatePackagesController implements Initializable {
 
         updateBtn.setOnAction(event -> {
 
-            // SQL query to insert data into table
+            if(selectLocation.getValue()!=null && priceTrip.getText()!=null && daysTrip.getText()!=null && imgLocation.getText()!=null && tripLcnUpdate.getText()!=null ){
 
-            String nameTrip = String.valueOf(selectLocation.getValue());
-            int priceTripValue = Integer.parseInt(priceTrip.getText());
-            int daysTrp = Integer.parseInt(daysTrip.getText());
-            String trimmedPath = selectedImagePath;
-            String lcNtrip = tripLcnUpdate.getText();
+                String nameTrip = String.valueOf(selectLocation.getValue());
+                int priceTripValue = Integer.parseInt(priceTrip.getText());
+                int daysTrp = Integer.parseInt(daysTrip.getText());
+                String trimmedPath = selectedImagePath;
+                String lcNtrip = tripLcnUpdate.getText();
 
-            try {
-                Connection connection = DriverManager.getConnection(URL, USER, pppp);
-                System.out.println("Connection");
-                String sql;
-                if (Objects.equals(selectAddCity, "Local")) {
-                    sql = "UPDATE  city  SET triplocation = ?, days = ?, price = ?, image = ? WHERE name = ?";
-                } else if (Objects.equals(selectAddCity, "Foreign")) {
-                    sql = "UPDATE foreignCity SET triplocation = ?, days = ?, price = ?, image = ? WHERE name = ?";
-                } else {
-                    System.out.println("Error insertion");
-                    return;
-                }
+                try {
+                    Connection connection = DriverManager.getConnection(URL, USER, pppp);
+                    System.out.println("Connection");
+                    String sql;
+                    if (Objects.equals(selectAddCity, "Local")) {
+                        sql = "UPDATE  city  SET triplocation = ?, days = ?, price = ?, image = ? WHERE name = ?";
 
-                PreparedStatement statement = connection.prepareStatement(sql);
-                statement.setString(1, lcNtrip);
-                statement.setInt(2, daysTrp);
-                statement.setInt(3, priceTripValue);
-                statement.setString(4, trimmedPath);
-                statement.setString(5, nameTrip);
+                    } else if (Objects.equals(selectAddCity, "Foreign")) {
+                        sql = "UPDATE foreignCity SET triplocation = ?, days = ?, price = ?, image = ? WHERE name = ?";
+                    } else {
+                        System.out.println("Error insertion");
+                        return;
+                    }
 
-                int rowsInserted = statement.executeUpdate();
-                if (rowsInserted > 0) {
-                    sql = "UPDATE allCity SET triplocation = ?, days = ?, price = ?, image = ? WHERE name = ?";
-
-                    statement = connection.prepareStatement(sql);
+                    PreparedStatement statement = connection.prepareStatement(sql);
                     statement.setString(1, lcNtrip);
                     statement.setInt(2, daysTrp);
                     statement.setInt(3, priceTripValue);
                     statement.setString(4, trimmedPath);
                     statement.setString(5, nameTrip);
-                    statement.executeUpdate();
-                    System.out.println("Update Successful.");
+
+                    int rowsInserted = statement.executeUpdate();
+                    if (rowsInserted > 0) {
+                        sql = "UPDATE allCity SET triplocation = ?, days = ?, price = ?, image = ? WHERE name = ?";
+
+                        statement = connection.prepareStatement(sql);
+                        statement.setString(1, lcNtrip);
+                        statement.setInt(2, daysTrp);
+                        statement.setInt(3, priceTripValue);
+                        statement.setString(4, trimmedPath);
+                        statement.setString(5, nameTrip);
+                        statement.executeUpdate();
+                        showAlert(Alert.AlertType.INFORMATION, "Update Packages", "successfully updateed Package");
+
+                        System.out.println("Update Successful.");
+                    }
+                }catch (SQLException ex) {
+                    ex.printStackTrace();
                 }
-            }catch (SQLException ex) {
-                ex.printStackTrace();
+                System.out.println("Trip Name: " + nameTrip + "\nPrice: " + priceTripValue + "\nImage Location: " + trimmedPath + "\nDay's: " + daysTrp);
+                System.out.println(getClass().getResource("City.fxml"));
+                insertExternalFxml(nameTrip,priceTripValue,daysTrp,trimmedPath);
+
+            }else {
+                showAlert(Alert.AlertType.ERROR, "Updating Failed", "Please filled the input fileds");
+
             }
-            System.out.println("Trip Name: " + nameTrip + "\nPrice: " + priceTripValue + "\nImage Location: " + trimmedPath + "\nDay's: " + daysTrp);
-            System.out.println(getClass().getResource("City.fxml"));
-            insertExternalFxml(nameTrip,priceTripValue,daysTrp,trimmedPath);
+
 
         });
 
@@ -238,5 +231,12 @@ public class UpdatePackagesController implements Initializable {
             }
             contentArea.getChildren().add(pane);
         }
+    }
+    private void showAlert(Alert.AlertType alertType, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

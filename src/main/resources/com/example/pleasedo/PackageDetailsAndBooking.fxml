@@ -112,7 +112,7 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <ComboBox fx:id="gendar" layoutX="57.0" layoutY="198.0" prefHeight="25.0" prefWidth="89.0" />
+            <ComboBox fx:id="gendar" layoutX="57.0" layoutY="198.0" prefHeight="25.0" prefWidth="89.0" promptText="Gendar" />
             <Text layoutX="9.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
                <font>
                   <Font size="14.0" />

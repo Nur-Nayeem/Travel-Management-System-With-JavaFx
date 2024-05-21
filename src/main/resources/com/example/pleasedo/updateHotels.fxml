@@ -8,20 +8,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="BaseLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="780.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.AddHotelScreenController">
+<AnchorPane fx:id="BaseLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="780.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pleasedo.UpdateHotelsController">
    <children>
-      <Label layoutX="239.0" layoutY="84.0" text="Location" textFill="#513e3e">
+      <Label layoutX="31.0" layoutY="141.0" text="Location" textFill="#513e3e">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="locationHotel" layoutX="326.0" layoutY="87.0" prefHeight="26.0" prefWidth="194.0" promptText="Name Of the Location" />
-      <Label layoutX="30.0" layoutY="140.0" text="Name" textFill="#534545">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <TextField fx:id="hotelName" layoutX="112.0" layoutY="143.0" prefHeight="26.0" prefWidth="163.0" promptText="Name of the Hotel" />
+      <TextField fx:id="locationHotel" layoutX="118.0" layoutY="144.0" prefHeight="26.0" prefWidth="153.0" promptText="Name Of the Location" />
       <Label layoutX="290.0" layoutY="138.0" text="Image: " textFill="#403535">
          <font>
             <Font size="20.0" />
@@ -30,14 +24,14 @@
       <Button fx:id="imageLocationBtn" layoutX="358.0" layoutY="143.0" mnemonicParsing="false" text="...." />
       <TextField fx:id="imgLocation" layoutX="392.0" layoutY="143.0" prefHeight="26.0" prefWidth="130.0" promptText="Image of location" />
       <ComboBox fx:id="hotelType" layoutX="112.0" layoutY="86.0" opacity="0.7" prefHeight="27.0" prefWidth="102.0" promptText="Select A Type" style="-fx-border-width: 0 0 2 0;" />
-      <Button fx:id="addHotelBtn" layoutX="251.0" layoutY="352.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="180.0" style="-fx-background-color: #00D885;" text="Add Hotels" textFill="WHITE" />
+      <Button fx:id="updateBtn" layoutX="37.0" layoutY="352.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="180.0" style="-fx-background-color: #00D885;" text="Update Hotel" textFill="WHITE" />
       <VBox fx:id="contentArea" layoutX="539.0" layoutY="85.0" prefHeight="204.0" prefWidth="226.0" style="-fx-background-color: transparent;" />
       <Label layoutX="30.0" layoutY="85.0" text="Type:" textFill="#3b2929">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="ClearBtn" layoutX="446.0" layoutY="352.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="92.0" style="-fx-background-color: #FF433A;" text="Clear" textFill="WHITE">
+      <Button fx:id="ClearBtn" layoutX="264.0" layoutY="352.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="92.0" style="-fx-background-color: #FF433A;" text="Clear" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -66,7 +60,13 @@
          </font>
       </Label>
       <TextField fx:id="economyPrice" layoutX="394.0" layoutY="255.0" prefHeight="26.0" prefWidth="130.0" promptText="Economy room Price" />
-      <Label layoutX="352.0" layoutY="27.0" text="Add New Hotel">
+      <Label layoutX="352.0" layoutY="27.0" text="Update Hotel">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="selectHotel" layoutX="338.0" layoutY="87.0" prefHeight="25.0" prefWidth="184.0" promptText="Select To Update" style="-fx-border-width: 0 0 2 0;" />
+      <Label layoutX="264.0" layoutY="84.0" text="Hotels" textFill="#513e3e">
          <font>
             <Font size="20.0" />
          </font>
